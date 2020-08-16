@@ -2,28 +2,28 @@
   <header class="chat-header" @mouseover="menu='menu'; onMenuActive()" @mouseleave="menu=''; onMenuActive()">
     <nav class="nav">
       <button class="item">
-        <img alt="Vue logo" src="../../assets/logo.png" width="20px">
+        <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>CHAT</span>
       </button>
       <button class="item">
-        <img alt="Vue logo" src="../../assets/logo.png" width="20px">
+        <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>Chat Online</span>
       </button>
       <div class="bottom">
-        <button class="item">
-          <img alt="Vue logo" src="../../assets/logo.png" width="20px">
+        <router-link to="/about" tag="button" class="item">
+          <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
           <span>Editar Perfil</span>
-        </button>
-        <button class="item">
-          <img alt="Vue logo" src="../../assets/logo.png" width="20px">
+        </router-link>
+        <router-link to="/about" tag="button" class="item">
+          <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
           <span>Configurar</span>
-        </button>
-        <button class="item">
+        </router-link>
+        <router-link to="/about" tag="button" class="item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.35 6.35" width="15px">
             <path d="M3.172.53a.265.266 0 00-.262.268v2.127a.265.266 0 00.53 0V.798A.265.266 0 003.172.53zm1.544.532a.265.266 0 00-.026 0 .265.266 0 00-.147.47c.459.391.749.973.749 1.626 0 1.18-.944 2.131-2.116 2.131A2.12 2.12 0 011.06 3.16c0-.65.286-1.228.74-1.62a.265.266 0 10-.344-.404A2.667 2.667 0 00.53 3.158a2.66 2.66 0 002.647 2.663 2.657 2.657 0 002.645-2.663c0-.812-.363-1.542-.936-2.03a.265.266 0 00-.17-.066z" fill="#00" />
           </svg>
           <span>Sair</span>
-        </button>
+        </router-link>
       </div>
     </nav>
   </header>

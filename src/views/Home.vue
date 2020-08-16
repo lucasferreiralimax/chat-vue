@@ -30,6 +30,7 @@ export default {
         {
           name: 'Dr. L',
           status: 'online',
+          content: `Deus é Maior`,
           date: '21:09 AM',
           notification: 6,
           photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
@@ -38,6 +39,7 @@ export default {
         {
           name: 'Dr. L',
           status: 'offline',
+          content: `olhe em volta`,
           date: '21:09 AM',
           notification: 0,
           photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
@@ -46,6 +48,16 @@ export default {
         {
           name: 'Dr. L',
           status: 'online',
+          content: `nao duvide`,
+          date: '21:09 AM',
+          notification: 1,
+          photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+          open: false
+        },
+        {
+          name: 'Dr. L',
+          status: 'online',
+          content: `Fé...`,
           date: '21:09 AM',
           notification: 1,
           photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
@@ -84,6 +96,7 @@ export default {
     height 40px
     border-radius 100%
   &.online:before
+    animation .5s status_online infinite alternate
     content ''
     width 15px
     height 15px
@@ -118,4 +131,12 @@ export default {
 @media screen and (min-width 1330px)
   .chat-page
     grid-column-gap 50px
+
+@keyframes status_online
+  0%
+    box-shadow 0 0 4px green + 40
+    background green + 50
+  100%
+    box-shadow 0 0 20px green + 40
+    background green + 100
 </style>

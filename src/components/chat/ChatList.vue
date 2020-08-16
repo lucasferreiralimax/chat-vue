@@ -50,9 +50,12 @@ export default {
   position relative
   transition .3s all
   display flex
+  cursor pointer
+  padding 1em 0
+  border-radius 10px
   &:hover
-    border-radius 10px
-    transform scale(1.1)
+    transform scale(1.05)
+    background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))
   .nome
     transform translateY(-6px)
   .time

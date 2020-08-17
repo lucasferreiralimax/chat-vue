@@ -1,14 +1,16 @@
 <template lang="html">
   <nav class="sidebar panel">
     <h2 class="panel-heading">{{ title }}</h2>
-    <a v-for="(chat, index) in chats" :key='index' class="chat-item panel-block">
-      <figure class="user-image">
-        <img :src="chat.photo" alt="Photo profile">
-      </figure>
-      <span class="nome">{{ chat.name }}</span>
-      <span class="time">{{ chat.date }}</span>
-      <span v-if="chat.notification >= 1" class="notification">{{ chat.notification }}</span>
-    </a>
+    <div class="scroll">
+      <a v-for="(chat, index) in chats" :key='index' class="chat-item panel-block">
+        <figure class="user-image">
+          <img :src="chat.photo" alt="Photo profile">
+        </figure>
+        <span class="nome">{{ chat.name }}</span>
+        <span class="time">{{ chat.date }}</span>
+        <span v-if="chat.notification >= 1" class="notification">{{ chat.notification }}</span>
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -45,7 +47,9 @@ export default {
     margin 0 10px
   .panel-block.is-active
     border-bottom 3px rgba(green + 100, .8) solid
-
+  .scroll
+    max-height calc(100% - 75px)
+    overflow-y auto
 .chat-item
   position relative
   transition .3s all

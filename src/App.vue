@@ -5,6 +5,19 @@
 </template>
 
 <style lang="stylus">
+
+::-webkit-scrollbar-track
+  background #fff
+
+::-webkit-scrollbar
+  background-color rgba(#fff, 0)
+  width 6px
+
+::-webkit-scrollbar-thumb
+  background-color rgba(#000, .2)
+  border-radius 10px
+  box-shadow inset 0 0 6px rgba(0,0,0,0)
+
 #app
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased

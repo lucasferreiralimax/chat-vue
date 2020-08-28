@@ -25,7 +25,7 @@ export default {
 .sidebar.panel
   width calc(100% - 40px)
   min-width 320px
-  margin 70px auto 0
+  margin 20px auto 0
   border 0
   border-radius 5px
   background #fff
@@ -58,7 +58,7 @@ export default {
   padding 1em 0
   border-radius 10px
   &:hover
-    transform scale(1.05)
+    // transform scale(1.05)
     background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))
   .nome
     transform translateY(-6px)

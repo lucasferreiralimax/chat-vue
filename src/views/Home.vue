@@ -43,7 +43,7 @@ export default {
   flex-direction column
   overflow-y auto
   position fixed
-  top 0
+  top 55px
   right 0
   left 0
   bottom 0
@@ -90,6 +90,7 @@ export default {
     grid-template-columns 100px 320px 1fr
     grid-column-gap 10px
     transition 2s
+    top 0
     &.menu
       grid-template-columns 200px 320px 1fr
 

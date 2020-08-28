@@ -50,13 +50,13 @@ export default {
 .chat-header
   width 100%
   height 55px
-  overflow-y auto
-  overflow-x hidden
+  overflow hidden
   background #fff
 
   transition .3s all
   z-index 99
   position fixed
+  top 0
   &:hover
     height auto
   .nav
@@ -70,7 +70,7 @@ export default {
     .item
       height 55px
       font-size 12px
-      padding .5em 2em
+      padding 18px 2em
       justify-content center
       color green
       display flex
@@ -78,6 +78,7 @@ export default {
       align-items center
       transition .3s all
       border-bottom 1px solid #ccc
+      cursor pointer
       svg
         width 40px
       span
@@ -103,7 +104,6 @@ export default {
     overflow-y auto
     overflow-x hidden
     background #fff
-
     transition .3s width
     z-index 99
     position relative

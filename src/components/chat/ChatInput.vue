@@ -27,13 +27,13 @@ export default {
       this.$store.commit('updateChat', {
         name: 'Dr. Leve',
         status: 'online',
-        content: `${inputChat.textContent}`,
+        content: `${inputChat.value}`,
         date: '21:09 AM',
         notification: 1,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
         open: true
       })
-      console.log(inputChat.textContent)
+      console.log(inputChat.value)
     }
   },
   mounted () {
@@ -42,7 +42,7 @@ export default {
 
     inputChat.addEventListener("input", (event) => {
       console.log(event)
-      console.log(inputChat.textContent)
+      console.log(inputChat.value)
     })
 
     contentChat.addEventListener("click", (event) => {

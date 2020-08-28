@@ -1,7 +1,7 @@
 <template>
   <div :class='"chat-page "+menu'>
     <chat-header @menuHandled="onMenu" />
-    <chat-list :chats='chats' title='Pessoas Online' />
+    <chat-list :chats='chats_list' title='Pessoas Online' />
     <chat :chats='chats' />
   </div>
 </template>
@@ -15,7 +15,7 @@ import Chat from '@/components/chat/Chat'
 
 export default {
   name: 'Home',
-  computed: mapState({ chats: state => state.chats }),
+  computed: mapState(['chats', 'chats_list']),
   components: {
     ChatHeader,
     ChatList,

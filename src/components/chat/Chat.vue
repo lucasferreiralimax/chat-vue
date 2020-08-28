@@ -19,62 +19,24 @@
       </ul>
     </section>
     <footer class="footer">
-      <div class="content-input autor">
-        <figure class="user-image" :class="chats[0].status">
-          <img :src="chats[0].photo" alt="Photo profile">
-        </figure>
-        <span class="nome">{{ chats[0].name }}</span>
-        <span class="input" contenteditable="true">Escrevendo...</span>
-        <button class="btn send" type="button" name="button" @click="sendMsg()">
-          Enviar Mensagem
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"><path d="M490.107 1.69L8.275 243.606a14.997 14.997 0 00-1.13 26.178l112.856 69.45V497a14.998 14.998 0 0026.993 9.007l77.13-102.697 173.004 106.464a15 15 0 0022.595-9.963l91.983-481.91c.031-.16.06-.32.086-.481 1.967-12.147-10.776-21.35-21.685-15.73zM134.214 312.758L45.785 258.34 398.697 81.152 134.214 312.758zm15.784 139.294V338.81l248.446-217.561-248.446 330.803zM394.33 472.83l-152.116-93.61L470.118 75.769 394.33 472.83z"/></svg>
-        </button>
-      </div>
+      <chat-input :chats='chats' />
     </footer>
   </section>
 </template>
 
 <script>
+import ChatInput from '@/components/chat/ChatInput'
+
 export default {
   name: 'chat',
   props: ['chats'],
+  components: {
+    ChatInput
+  },
   data () {
     return {
       title: 'Chat'
     }
-  },
-  methods: {
-    sendMsg () {
-      let inputChat = document.querySelector('.content-input .input')
-      this.$store.commit('updateChat', {
-        name: 'Dr. Leve',
-        status: 'online',
-        content: `${inputChat.textContent}`,
-        date: '21:09 AM',
-        notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: true
-      })
-      console.log(inputChat.textContent)
-    }
-  },
-  mounted () {
-    console.log(document.querySelector('.content-input .input'))
-    console.log("vai")
-    let contentChat = document.querySelector('.content-input')
-    let inputChat = document.querySelector('.content-input .input')
-
-    inputChat.addEventListener("input", (event) => {
-      console.log(event)
-      console.log(inputChat.textContent)
-    })
-
-    contentChat.addEventListener("click", (event) => {
-      inputChat.focus()
-      console.log(event)
-      console.log(contentChat)
-    })
-
   }
 }
 </script>
@@ -184,6 +146,12 @@ export default {
 .content-input
   width 100%
   cursor text
+  .input
+    width calc(100% - 110px)
+    box-sizing border-box
+    border 0
+    outline none
+    height 80px
   .btn.send
     background green + 50
     position absolute

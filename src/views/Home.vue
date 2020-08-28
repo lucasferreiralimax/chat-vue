@@ -89,7 +89,6 @@ export default {
     overflow-y auto
     grid-template-columns 100px 320px 1fr
     grid-column-gap 10px
-    transition 2s
     top 0
     &.menu
       grid-template-columns 200px 320px 1fr

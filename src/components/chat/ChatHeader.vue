@@ -92,7 +92,8 @@ export default {
     .bottom
       display flex
       flex-direction column
-      svg  width 25px
+      svg
+        width 25px
       .item:first-of-type
         background transparent
         color green
@@ -109,21 +110,25 @@ export default {
     position relative
     &:hover
       .nav .item
-        font-size 12px
+        // font-size 12px
         padding .5em 2em
         justify-content flex-start
         span
           opacity 1
+          transform scale(1)
+          display block
     .nav
       height 100vh
       .item
         border 0
         height 100px
-        font-size 0
+        // font-size 0
         padding .5em
         justify-content center
         span
           opacity 0
+          transform scale(0)
+          display none
     .bottom
       height 150px
       position relative

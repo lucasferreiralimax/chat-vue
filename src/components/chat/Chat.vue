@@ -12,7 +12,7 @@
           </div>
           <article class="message">
             <div class="message-body">
-              {{ chat.content }}
+              <pre>{{ chat.content }}</pre>
             </div>
           </article>
         </li>
@@ -56,7 +56,6 @@ export default {
     padding 20px
     box-sizing border-box
   .footer
-    // margin-top 30px
     height 100px
     display flex
     flex-direction row
@@ -130,6 +129,8 @@ export default {
         .time
           left auto
           right 55px
+        .message-body pre
+          text-align left
       .user-image
         margin 0 10px 10px 0 !important
       .time
@@ -143,6 +144,8 @@ export default {
     .message-body
       border-width 1px
       padding 10px
+      pre
+        text-align right !important
 .content-input
   width 100%
   cursor text

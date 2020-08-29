@@ -3,7 +3,6 @@
     <figure class="user-image" :class="chats[0].status">
       <img :src="chats[0].photo" alt="Photo profile">
     </figure>
-    <span class="nome">{{ chats[0].name }}</span>
     <textarea class="input"></textarea>
     <button class="btn send" type="button" name="button" @click="sendMsg()">
       Enviar Mensagem
@@ -24,16 +23,29 @@ export default {
   methods: {
     sendMsg () {
       let inputChat = document.querySelector('.chat-input .input')
-      this.$store.commit('updateChat', {
-        name: 'Dr. Leve',
-        status: 'online',
-        content: `${inputChat.value}`,
-        date: '21:09 AM',
-        notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: true
-      })
-      console.log(inputChat.value)
+
+      if(inputChat.value.trim()) {
+        this.$store.commit('updateChat', {
+          name: 'Dr. Leve',
+          status: 'online',
+          content: `${inputChat.value}`,
+          date: '21:09 AM',
+          notification: 1,
+          photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+          open: true
+        })
+        inputChat.value = ''
+        setTimeout(this.scrollBottom, 1000);
+      }
+      // console.log(contentChatConversation)
+      // console.log(inputChat.value)
+    },
+    scrollBottom () {
+      let contentChatConversation = document.querySelector('.chat-list')
+      contentChatConversation.scrollTop = contentChatConversation.scrollHeight
+      console.log(contentChatConversation.scrollTop)
+      console.log(contentChatConversation.scrollHeight)
+      console.log(contentChatConversation.offsetTop)
     }
   },
   mounted () {
@@ -56,7 +68,6 @@ export default {
 
 <style lang="stylus">
 .chat-input
-  height 100px
   width 100%
   cursor text
   display flex
@@ -72,11 +83,11 @@ export default {
       left 60px
       bottom 10px
   .input
-    width calc(100% - 110px)
+    width 100%
     box-sizing border-box
     border 0
     outline none
-    height 80px
+    height 60px
   .btn.send
     background green + 50
     position absolute

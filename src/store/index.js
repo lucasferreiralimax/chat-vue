@@ -8,7 +8,7 @@ export default new Vuex.Store({
     chats: [
       {
         name: 'Dr. L',
-        status: 'online',
+        status: 'offline',
         content: `Deus é Maior`,
         date: '21:09 AM',
         notification: 6,
@@ -17,7 +17,7 @@ export default new Vuex.Store({
       },
       {
         name: 'Dr. L',
-        status: 'offline',
+        status: 'online',
         content: `olhe em volta`,
         date: '21:09 AM',
         notification: 0,
@@ -26,7 +26,7 @@ export default new Vuex.Store({
       },
       {
         name: 'Dr. L',
-        status: 'online',
+        status: 'offline',
         content: `nao duvide`,
         date: '21:09 AM',
         notification: 1,
@@ -35,7 +35,7 @@ export default new Vuex.Store({
       },
       {
         name: 'Dr. L',
-        status: 'online',
+        status: 'offline',
         content: `Fé...`,
         date: '21:09 AM',
         notification: 1,
@@ -45,40 +45,36 @@ export default new Vuex.Store({
     ],
     chats_list: [
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'online',
-        content: `Deus é Maior`,
+        status_persona: 'Meus versos vivos te farão viver.',
         date: '21:09 AM',
         notification: 6,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
+        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7'
       },
       {
-        name: 'Dr. L',
+        name: 'Vue',
         status: 'offline',
-        content: `olhe em volta`,
+        status_persona: 'Às vezes brilha o Sol em demasia',
         date: '21:09 AM',
         notification: 0,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: true
+        photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4'
       },
       {
-        name: 'Dr. L',
+        name: 'Bot',
         status: 'online',
-        content: `nao duvide`,
+        status_persona: 'Nem chegarás da morte ao triste inverno',
         date: '21:09 AM',
         notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
+        photo: 'https://avatars3.githubusercontent.com/ml/211?s=140&v=4'
       },
       {
-        name: 'Dr. L',
+        name: 'Hub',
         status: 'online',
-        content: `Fé...`,
+        status_persona: 'Nestas linhas com o tempo crescerás.',
         date: '21:09 AM',
         notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
+        photo: 'https://avatars1.githubusercontent.com/u/9919?s=200&v=4'
       }
     ]
   },

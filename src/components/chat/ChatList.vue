@@ -7,6 +7,7 @@
           <img :src="chat.photo" alt="Photo profile">
         </figure>
         <span class="nome">{{ chat.name }}</span>
+        <span class="status_persona">{{ chat.status_persona }}</span>
         <span class="time">{{ chat.date }}</span>
         <span v-if="chat.notification >= 1" class="notification">{{ chat.notification }}</span>
       </a>
@@ -57,11 +58,20 @@ export default {
   cursor pointer
   padding 1em 0
   border-radius 10px
+  align-items center
   &:hover
     // transform scale(1.05)
     background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))
   .nome
-    transform translateY(-6px)
+    margin-left 10px
+  .status_persona
+    font-size 11px
+    color #aaa
+    margin-left 10px
+    overflow hidden
+    text-overflow ellipsis
+    white-space pre
+    width 100%
   .time
     position absolute
     bottom 10px

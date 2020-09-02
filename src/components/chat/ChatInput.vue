@@ -1,7 +1,7 @@
 <template lang="html">
   <section class="chat-input">
-    <figure class="user-image" :class="chats[0].status">
-      <img :src="chats[0].photo" alt="Photo profile">
+    <figure class="user-image" :class="chats[1].status">
+      <img :src="chats[1].photo" alt="Photo profile">
     </figure>
     <textarea class="input"></textarea>
     <button class="btn send" type="button" name="button" @click="sendMsg()">
@@ -91,8 +91,8 @@ export default {
   .btn.send
     background green + 50
     position absolute
-    top 0
-    right 0
+    bottom -25px
+    right -25px
     border-radius 100px
     font-size 0
     border 0

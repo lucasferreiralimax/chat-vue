@@ -46,7 +46,7 @@ export default {
   width calc(100% - 40px)
   margin 0 auto
   padding-top 30px
-  padding-bottom 30px
+  padding-bottom 75px
   box-sizing border-box
   .footer,
   .content
@@ -111,7 +111,7 @@ export default {
       height 100%
       overflow-y auto
       margin 0
-      padding 20px 20px 80px
+      padding 20px
     li
       padding 0
       margin 0 0 20px

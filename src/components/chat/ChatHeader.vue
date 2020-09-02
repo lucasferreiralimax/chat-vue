@@ -11,11 +11,11 @@
       </button>
       <div class="bottom">
         <router-link to="/about" tag="button" class="item">
-          <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
+          <img alt="Vue logo" src="../../assets/chat-icon-user.svg" width="20px">
           <span>Editar Perfil</span>
         </router-link>
         <router-link to="/about" tag="button" class="item">
-          <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
+          <img alt="Vue logo" src="../../assets/chat-icon-config.svg" width="30px">
           <span>Configurar</span>
         </router-link>
         <router-link to="/about" tag="button" class="item">

@@ -1,5 +1,5 @@
 <template lang="html">
-  <header class="chat-header" @mouseover="menu='menu'; onMenuActive()" @mouseleave="menu=''; onMenuActive()">
+  <header class="chat-header">
     <nav class="nav">
       <button class="item">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
@@ -32,9 +32,42 @@
 <script>
 export default {
   name: 'chat-header',
+  created () {
+    window.addEventListener('resize', this.onMenuResize)
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.onMenuResize)
+  },
   methods: {
     onMenuActive () {
       this.$emit('menuHandled', this.menu)
+    },
+    onMenuOver () {
+      this.menu = 'menu'
+      this.onMenuActive()
+    },
+    onMenuLeave () {
+      this.menu = ''
+      this.onMenuActive()
+    },
+    onMenuResize () {
+      if(window.innerWidth > 1300) {
+        this.menu = 'menu'
+        this.onMenuActive()
+
+        let header = document.querySelector('.chat-header')
+
+        header.removeEventListener('mouseover', this.onMenuOver)
+        header.removeEventListener('mouseleave', this.onMenuLeave)
+      } else {
+        this.menu = ''
+        this.onMenuActive()
+
+        let header = document.body.querySelector('.chat-header')
+
+        header.addEventListener('mouseover', this.onMenuOver)
+        header.addEventListener('mouseleave', this.onMenuLeave)
+      }
     }
   },
   data () {
@@ -135,7 +168,15 @@ export default {
       bottom 0
       right 0
       left 0
-
+@media screen and (min-width 1300px)
+  .chat-header
+    .nav .item
+      padding .5em 2em
+      justify-content flex-start
+      span
+        opacity 1
+        transform scale(1)
+        display block
 @media screen and (min-height 550px) and (min-width 830px)
   .chat-header .bottom
     position absolute

@@ -96,6 +96,16 @@ export default {
 @media screen and (min-width 1330px)
   .chat-page
     grid-column-gap 50px
+    &.menu
+      grid-template-columns 250px 350px 1fr
+
+@media screen and (min-width 1500px)
+  .chat-page.menu
+      grid-template-columns 250px 450px 1fr
+
+@media screen and (min-width 1800px)
+  .chat-page.menu
+      grid-template-columns 450px 600px 1fr
 
 @keyframes status_online
   0%

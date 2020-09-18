@@ -35,6 +35,17 @@ export default {
   created () {
     window.addEventListener('resize', this.onMenuResize)
   },
+  mounted () {
+    if(window.innerWidth > 1300) {
+      this.menu = 'menu'
+      this.onMenuActive()
+      this.onMenuRemoveEventListener()
+    } else {
+      this.menu = ''
+      this.onMenuActive()
+      this.onMenuEventListener()
+    }
+  },
   destroyed () {
     window.removeEventListener('resize', this.onMenuResize)
   },
@@ -50,23 +61,25 @@ export default {
       this.menu = ''
       this.onMenuActive()
     },
+    onMenuEventListener () {
+      let header = document.querySelector('.chat-header')
+      header.addEventListener('mouseover', this.onMenuOver)
+      header.addEventListener('mouseleave', this.onMenuLeave)
+    },
+    onMenuRemoveEventListener () {
+      let header = document.querySelector('.chat-header')
+      header.removeEventListener('mouseover', this.onMenuOver)
+      header.removeEventListener('mouseleave', this.onMenuLeave)
+    },
     onMenuResize () {
       if(window.innerWidth > 1300) {
         this.menu = 'menu'
         this.onMenuActive()
-
-        let header = document.querySelector('.chat-header')
-
-        header.removeEventListener('mouseover', this.onMenuOver)
-        header.removeEventListener('mouseleave', this.onMenuLeave)
+        this.onMenuRemoveEventListener()
       } else {
         this.menu = ''
         this.onMenuActive()
-
-        let header = document.body.querySelector('.chat-header')
-
-        header.addEventListener('mouseover', this.onMenuOver)
-        header.addEventListener('mouseleave', this.onMenuLeave)
+        this.onMenuEventListener()
       }
     }
   },

@@ -18,6 +18,9 @@
   border-radius 10px
   box-shadow inset 0 0 6px rgba(0,0,0,0)
 
+body
+  margin 0
+
 #app
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased

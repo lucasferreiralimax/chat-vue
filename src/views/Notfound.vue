@@ -1,5 +1,5 @@
 <template>
-  <div class="notfound">
+  <div class="page notfound">
     <h1>Page 404</h1>
     <p>Desculpe o inconveniente essa página não existe</p>
     <router-link to="/" tag="a">
@@ -15,7 +15,4 @@
     justify-content center
     min-height 100vh
     flex-direction column
-    a
-      text-decoration none
-      color #2cca6b
 </style>

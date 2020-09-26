@@ -26,4 +26,11 @@ body
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   color #2c3e50
+
+.page
+  padding 2em
+  box-sizing border-box
+  a
+    text-decoration none
+    color #2cca6b
 </style>

@@ -2,7 +2,7 @@
   <section class="chat-content">
     <section class="content">
       <ul class="chat-list">
-        <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open }">
+        <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
           <div class="autor">
             <figure class="user-image" :class="chat.status">
               <img :src="chat.photo" alt="Photo profile">
@@ -120,8 +120,12 @@ export default {
       justify-content center
       .autor
         position relative
+      &.right + .right .autor
+          display none
       &.left
         align-items flex-end
+        + .left .autor
+          display none
         .autor
           flex-direction row-reverse
         .user-image

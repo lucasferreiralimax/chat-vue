@@ -150,6 +150,7 @@ export default {
       padding 10px
       pre
         text-align right !important
+        margin 0
 .content-input
   width 100%
   cursor text

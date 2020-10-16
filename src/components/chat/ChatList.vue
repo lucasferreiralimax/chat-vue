@@ -2,7 +2,7 @@
   <nav class="sidebar panel">
     <h2 class="panel-heading">{{ title }}</h2>
     <div class="scroll">
-      <a v-for="(chat, index) in chats" :key='index' class="chat-item panel-block">
+      <router-link :to="chat.url" tag="a" class="chat-item panel-block" v-for="(chat, index) in chats" :key='index'>
         <figure class="user-image">
           <img :src="chat.photo" alt="Photo profile">
         </figure>
@@ -10,7 +10,7 @@
         <span class="status_persona">{{ chat.status_persona }}</span>
         <span class="time">{{ chat.date }}</span>
         <span v-if="chat.notification >= 1" class="notification">{{ chat.notification }}</span>
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
@@ -59,8 +59,10 @@ export default {
   padding 1em 0
   border-radius 10px
   align-items center
+  text-decoration none
+  color #333
   &:hover
-    // transform scale(1.05)
+    color green + 100
     background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))
   .nome
     margin-left 10px

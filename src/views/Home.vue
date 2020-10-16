@@ -15,7 +15,28 @@ import Chat from '@/components/chat/Chat'
 
 export default {
   name: 'Home',
-  computed: mapState(['chats', 'chats_list']),
+  computed: mapState(['chats_list']),
+  created () {
+    let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
+    if(chat_current) {
+      this.chats = chat_current.chats
+    } else {
+      this.$router.push({ name: 'Notfound' })
+    }
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to)
+      console.log(from)
+      let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
+      console.log(chat_current)
+      if(chat_current) {
+        this.chats = chat_current.chats
+      } else {
+        this.$router.push({ name: 'Notfound' })
+      }
+    }
+  },
   components: {
     ChatHeader,
     ChatList,
@@ -28,7 +49,8 @@ export default {
   },
   data () {
     return {
-      menu: ''
+      menu: '',
+      chats: []
     }
   }
 }

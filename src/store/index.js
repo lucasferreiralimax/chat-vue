@@ -5,44 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    chats: [
-      {
-        name: 'Dr. L',
-        status: 'offline',
-        content: `Deus é Maior`,
-        date: '21:09 AM',
-        notification: 6,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
-      },
-      {
-        name: 'Dr. L',
-        status: 'online',
-        content: `olhe em volta`,
-        date: '21:09 AM',
-        notification: 0,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: true
-      },
-      {
-        name: 'Dr. L',
-        status: 'offline',
-        content: `nao duvide`,
-        date: '21:09 AM',
-        notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
-      },
-      {
-        name: 'Dr. L',
-        status: 'offline',
-        content: `Fé...`,
-        date: '21:09 AM',
-        notification: 1,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
-        open: false
-      }
-    ],
     chats_list: [
       {
         name: 'L',
@@ -50,7 +12,46 @@ export default new Vuex.Store({
         status_persona: 'Meus versos vivos te farão viver.',
         date: '21:09 AM',
         notification: 6,
-        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7'
+        photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
+        chats: [
+          {
+            name: 'Dr. L',
+            status: 'offline',
+            content: `Deus é Maior`,
+            date: '21:09 AM',
+            notification: 6,
+            photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+            open: false
+          },
+          {
+            name: 'Dr. L',
+            status: 'online',
+            content: `olhe em volta`,
+            date: '21:09 AM',
+            notification: 0,
+            photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+            open: true
+          },
+          {
+            name: 'Dr. L',
+            status: 'offline',
+            content: `nao duvide`,
+            date: '21:09 AM',
+            notification: 1,
+            photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+            open: false
+          },
+          {
+            name: 'Dr. L',
+            status: 'offline',
+            content: `Fé...`,
+            date: '21:09 AM',
+            notification: 1,
+            photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+            open: false
+          }
+        ]
       },
       {
         name: 'Vue',
@@ -58,7 +59,28 @@ export default new Vuex.Store({
         status_persona: 'Às vezes brilha o Sol em demasia',
         date: '21:09 AM',
         notification: 0,
-        photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4'
+        photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4',
+        url: 'vue',
+        chats: [
+          {
+            name: 'Vue',
+            status: 'offline',
+            content: `Vue interface chat`,
+            date: '21:09 AM',
+            notification: 0,
+            photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4',
+            open: false
+          },
+          {
+            name: 'Dr. L',
+            status: 'online',
+            content: `Todo dia aprendendo`,
+            date: '21:09 AM',
+            notification: 0,
+            photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+            open: true
+          }
+        ]
       },
       {
         name: 'Bot',
@@ -66,7 +88,19 @@ export default new Vuex.Store({
         status_persona: 'Nem chegarás da morte ao triste inverno',
         date: '21:09 AM',
         notification: 1,
-        photo: 'https://avatars3.githubusercontent.com/ml/211?s=140&v=4'
+        photo: 'https://avatars3.githubusercontent.com/ml/211?s=140&v=4',
+        url: 'bot',
+        chats: [
+          {
+            name: 'Bot',
+            status: 'offline',
+            content: `Hello my friend L`,
+            date: '21:09 AM',
+            notification: 0,
+            photo: 'https://avatars3.githubusercontent.com/ml/211?s=140&v=4',
+            open: false
+          }
+        ]
       },
       {
         name: 'Hub',
@@ -74,13 +108,16 @@ export default new Vuex.Store({
         status_persona: 'Nestas linhas com o tempo crescerás.',
         date: '21:09 AM',
         notification: 1,
-        photo: 'https://avatars1.githubusercontent.com/u/9919?s=200&v=4'
+        photo: 'https://avatars1.githubusercontent.com/u/9919?s=200&v=4',
+        url: 'hub',
+        chats: []
       }
     ]
   },
   mutations: {
     updateChat (state, value) {
-      state.chats.push(value)
+      let chat_current = state.chats_list.find(el => el.url == value.url)
+      chat_current.chats.push(value.obj)
     },
   },
   actions: {

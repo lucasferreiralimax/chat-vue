@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/',
+    path: '/chat/:id',
     name: 'Home',
     component: Home
   },
@@ -37,7 +37,7 @@ Vue.use(VueRouter)
   {
     path: '*',
     redirect: '/404'
-  },
+  }
 ]
 
 const router = new VueRouter({

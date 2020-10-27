@@ -1,7 +1,7 @@
 <template lang="html">
   <section class="chat-content">
     <section class="content">
-      <ul class="chat-list" v-if="chats.length">
+      <ul class="chat-list" v-if="chats">
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
           <div class="autor">
             <figure class="user-image" :class="chat.status">

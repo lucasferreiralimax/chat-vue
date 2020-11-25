@@ -2,7 +2,7 @@
   <div :class='"chat-page "+menu'>
     <chat-header @menuHandled="onMenu" />
     <chat-list :chats='chats_list' title='Pessoas Online' />
-    <chat :chats='chats' />
+    <router-view />
   </div>
 </template>
 
@@ -11,36 +11,13 @@ import { mapState } from 'vuex'
 
 import ChatHeader from '@/components/chat/ChatHeader'
 import ChatList from '@/components/chat/ChatList'
-import Chat from '@/components/chat/Chat'
 
 export default {
   name: 'Home',
   computed: mapState(['chats_list']),
-  created () {
-    let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
-    if(chat_current) {
-      this.chats = chat_current.chats
-    } else {
-      this.$router.push({ name: 'Notfound' })
-    }
-  },
-  watch: {
-    $route(to, from) {
-      console.log(to)
-      console.log(from)
-      let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
-      console.log(chat_current)
-      if(chat_current) {
-        this.chats = chat_current.chats
-      } else {
-        this.$router.push({ name: 'Notfound' })
-      }
-    }
-  },
   components: {
     ChatHeader,
-    ChatList,
-    Chat
+    ChatList
   },
   methods: {
     onMenu (value) {
@@ -49,8 +26,7 @@ export default {
   },
   data () {
     return {
-      menu: '',
-      chats: []
+      menu: ''
     }
   }
 }

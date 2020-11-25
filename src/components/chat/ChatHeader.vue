@@ -1,14 +1,14 @@
 <template lang="html">
   <header class="chat-header">
     <nav class="nav">
-      <button class="item">
+      <router-link to="/" tag="button" class="item">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>CHAT</span>
-      </button>
-      <button class="item">
+      </router-link>
+      <router-link to="/" tag="button" class="item">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>Chat Online</span>
-      </button>
+      </router-link>
       <div class="bottom">
         <router-link to="/about" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-user.svg" width="20px">
@@ -63,13 +63,17 @@ export default {
     },
     onMenuEventListener () {
       let header = document.querySelector('.chat-header')
-      header.addEventListener('mouseover', this.onMenuOver)
-      header.addEventListener('mouseleave', this.onMenuLeave)
+      if(header) {
+        header.addEventListener('mouseover', this.onMenuOver)
+        header.addEventListener('mouseleave', this.onMenuLeave)
+      }      
     },
     onMenuRemoveEventListener () {
       let header = document.querySelector('.chat-header')
-      header.removeEventListener('mouseover', this.onMenuOver)
-      header.removeEventListener('mouseleave', this.onMenuLeave)
+      if(header) {
+        header.removeEventListener('mouseover', this.onMenuOver)
+        header.removeEventListener('mouseleave', this.onMenuLeave)
+      }
     },
     onMenuResize () {
       if(window.innerWidth > 1300) {

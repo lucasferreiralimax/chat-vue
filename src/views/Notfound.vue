@@ -2,7 +2,7 @@
   <div class="page notfound">
     <h1>Page 404</h1>
     <p>Desculpe o inconveniente essa página não existe</p>
-    <router-link to="/chat/lucas" tag="a">
+    <router-link to="/" tag="a">
       Clique aqui para ir para Home
     </router-link>
   </div>

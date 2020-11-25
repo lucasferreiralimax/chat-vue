@@ -2,7 +2,7 @@
   <nav class="sidebar panel">
     <h2 class="panel-heading">{{ title }}</h2>
     <div class="scroll">
-      <router-link :to="chat.url" tag="a" class="chat-item panel-block" v-for="(chat, index) in chats" :key='index'>
+      <router-link :to="{ name: 'chat', params: { id: chat.url }}" tag="a" class="chat-item panel-block" v-for="(chat, index) in chats" :key='index'>
         <figure class="user-image">
           <img :src="chat.photo" alt="Photo profile">
         </figure>

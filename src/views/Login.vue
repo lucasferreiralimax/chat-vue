@@ -23,7 +23,7 @@ export default {
   name: 'name',
   methods: {
     login () {
-      this.$router.push('/chat/bot')
+      this.$router.push('/')
     }
   }
 }

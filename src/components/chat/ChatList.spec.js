@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 
-import ChatList from './Chat.vue'
+import ChatList from './ChatList.vue'
 
 const wrapper = shallowMount(ChatList)
 

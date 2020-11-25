@@ -28,7 +28,7 @@
 import ChatInput from '@/components/chat/ChatInput'
 
 export default {
-  name: 'chat',
+  name: 'chat-content',
   props: ['chats'],
   components: {
     ChatInput

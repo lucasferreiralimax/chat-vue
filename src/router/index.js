@@ -1,37 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
+// import Chat from '../views/Chat.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/chat/:id',
-    name: 'Home',
-    component: Home
-  },
+    path: '/',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
+    children: [
+      {
+        path: '',
+        name: 'welcome',
+        component: () => import(/* webpackChunkName: "welcome" */ '../views/Welcome.vue')
+      },
+      {
+        path: 'chat/:id',
+        name: 'chat',
+        component: () => import(/* webpackChunkName: "chat" */ '../views/Chat.vue')
+      }
+    ]
+  },  
   {
     path: '/login',
-    name: 'Login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: 'login',
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
     path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: 'about',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/404',
-    name: 'Notfound',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    name: 'notfound',
     component: () => import(/* webpackChunkName: "notfound" */ '../views/Notfound.vue')
   },
   {

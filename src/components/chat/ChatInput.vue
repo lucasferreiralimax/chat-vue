@@ -55,16 +55,20 @@ export default {
     let contentChat = document.querySelector('.chat-input')
     let inputChat = document.querySelector('.chat-input .input')
 
-    inputChat.addEventListener("input", (event) => {
-      console.log(event)
-      console.log(inputChat.value)
-    })
-
-    contentChat.addEventListener("click", (event) => {
-      inputChat.focus()
-      console.log(event)
-      console.log(contentChat)
-    })
+    if(contentChat) {
+      inputChat.addEventListener("input", (event) => {
+        console.log(event)
+        console.log(inputChat.value)
+      })
+    }
+    
+    if(inputChat) {
+      contentChat.addEventListener("click", (event) => {
+        inputChat.focus()
+        console.log(event)
+        console.log(contentChat)
+      })
+    }    
   }
 }
 </script>

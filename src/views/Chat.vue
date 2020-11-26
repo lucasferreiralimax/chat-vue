@@ -14,7 +14,7 @@ export default {
     if(chat_current) {
       this.chats = chat_current.chats
     } else {
-    //   this.$router.push({ name: 'Notfound' })
+      this.$router.push({ name: 'notfound' })
     }
   },
   watch: {
@@ -26,7 +26,7 @@ export default {
       if(chat_current) {
         this.chats = chat_current.chats
       } else {
-        // this.$router.push({ name: 'Notfound' })
+        this.$router.push({ name: 'notfound' })
       }
     }
   },

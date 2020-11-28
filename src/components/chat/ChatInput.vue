@@ -42,33 +42,19 @@ export default {
         inputChat.value = ''
         setTimeout(this.scrollBottom, 1000);
       }
-      // console.log(contentChatConversation)
-      // console.log(inputChat.value)
     },
     scrollBottom () {
       let contentChatConversation = document.querySelector('.chat-list')
       contentChatConversation.scrollTop = contentChatConversation.scrollHeight
-      console.log(contentChatConversation.scrollTop)
-      console.log(contentChatConversation.scrollHeight)
-      console.log(contentChatConversation.offsetTop)
     }
   },
   mounted () {
     let contentChat = document.querySelector('.chat-input')
     let inputChat = document.querySelector('.chat-input .input')
-
-    if(contentChat) {
-      inputChat.addEventListener("input", (event) => {
-        console.log(event)
-        console.log(inputChat.value)
-      })
-    }
     
     if(inputChat) {
       contentChat.addEventListener("click", (event) => {
         inputChat.focus()
-        console.log(event)
-        console.log(contentChat)
       })
     }    
   }

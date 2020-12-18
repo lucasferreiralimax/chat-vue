@@ -5,16 +5,12 @@
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>CHAT</span>
       </router-link>
-      <router-link to="/" tag="button" class="item">
-        <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
-        <span>Chat Online</span>
-      </router-link>
       <div class="bottom">
-        <router-link to="/about" tag="button" class="item">
+        <router-link to="/profile" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-user.svg" width="20px">
           <span>Editar Perfil</span>
         </router-link>
-        <router-link to="/about" tag="button" class="item">
+        <router-link to="/config" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-config.svg" width="30px">
           <span>Configurar</span>
         </router-link>

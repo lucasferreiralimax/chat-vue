@@ -53,7 +53,7 @@ export default {
     let inputChat = document.querySelector('.chat-input .input')
     
     if(inputChat) {
-      contentChat.addEventListener("click", (event) => {
+      contentChat.addEventListener("click", () => {
         inputChat.focus()
       })
     }    

@@ -8,12 +8,12 @@
         <span>Login</span>
       </h1>
       <label for="user">User</label>
-      <input id="user" type="text" name="user" placeholder="User">
+      <input id="user" type="text" name="user" placeholder="User" v-model="user">
       <br>
       <label for="password">Password</label>
-      <input id="password" type="password" name="password" placeholder="Password">
+      <input id="password" type="password" name="password" placeholder="Password" v-model="pass">
       <br>
-      <button name="button">Enter</button>
+      <button name="button" :disabled="!user || !pass">Enter</button>
     </form>
   </div>
 </template>
@@ -21,8 +21,16 @@
 <script>
 export default {
   name: 'name',
+  data() {
+    return {
+      user: '',
+      pass: ''
+    }
+  },
   methods: {
     login () {
+      this.$store.commit("updateAuth", true)
+      console.log(this.$store.state.auth)
       this.$router.push('/')
     }
   }
@@ -40,7 +48,7 @@ export default {
   background-size cover
   box-sizing border-box
 .login-form
-  background linear-gradient(-45deg, #2cca6b, #eee)
+  background linear-gradient(-45deg, #fff, #aaa)
   border-radius 10px
   padding 2.6em
   width 100%
@@ -64,7 +72,7 @@ export default {
     padding 10px
     box-sizing border-box
     border-radius 10px
-    border 4px solid rgba(#2cca6b, .5)
+    border 4px solid rgba(#aaa, .5)
     &:active,
     &:hover
       border 4px solid #2cca6b
@@ -76,7 +84,13 @@ export default {
     background #2cca6b
     border 4px solid rgba(#000, .2)
     box-shadow inset 0 0 0 2px rgba(#fff, .3)
+    color #fff
     cursor pointer
+    text-shadow 0 2px 2px rgba(#000, .3)
+    user-select none
     &:hover
       background rgba(#2cca6b, .5)
+    &:disabled
+      pointer-events none
+      filter grayscale(1)
 </style>

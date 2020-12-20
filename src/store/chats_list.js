@@ -15,6 +15,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 6,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
         open: false
       },
       {
@@ -24,6 +25,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 0,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
         open: true
       },
       {
@@ -33,6 +35,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 1,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
         open: false
       },
       {
@@ -42,6 +45,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 1,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
         open: false
       }
     ]
@@ -62,6 +66,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 0,
         photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4',
+        url: 'vue',
         open: false
       },
       {
@@ -71,6 +76,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 0,
         photo: 'https://avatars2.githubusercontent.com/u/40927839?s=460&u=25362ddd9f12b82fc4484fd8298e29c8564ab0d7',
+        url: 'lucas',
         open: true
       }
     ]
@@ -91,6 +97,7 @@ export let chats_list = [
         date: '21:09 AM',
         notification: 0,
         photo: 'https://avatars3.githubusercontent.com/ml/211?s=140&v=4',
+        url: 'bot',
         open: false
       }
     ]

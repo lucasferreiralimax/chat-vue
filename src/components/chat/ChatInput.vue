@@ -36,6 +36,7 @@ export default {
             date: '21:09 AM',
             notification: 1,
             photo: this.user.photo,
+            url: 'lucas',
             open: true
           }
         })

@@ -4,7 +4,7 @@
       <ul class="chat-list" v-if="chats">
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
           <div class="autor">
-            <figure class="user-image" :class="chat.status">
+            <figure class="user-image" :class="chat.status" @click="profile(chat.url)">
               <img :src="chat.photo" alt="Photo profile">
             </figure>
             <span class="nome">{{ chat.name }}</span>
@@ -36,6 +36,11 @@ export default {
   data () {
     return {
       title: 'Chat'
+    }
+  },
+  methods: {
+    profile (url) {
+      this.$router.push(`/profile/${url}`)
     }
   }
 }
@@ -135,6 +140,7 @@ export default {
         .message-body pre
           text-align left
       .user-image
+        cursor pointer
         margin 0 10px 10px 0 !important
       .time
         font-size 11px

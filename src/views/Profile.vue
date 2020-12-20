@@ -1,6 +1,7 @@
 <template>
     <section class="chat-content">
-        <h1>{{ profile_view ? 'Editar perfil' : 'Perfil' }} {{ profile.name }}</h1>        
+        <h1>{{ profile_view ? 'Perfil' : 'Editar perfil' }} {{ profile.name }}</h1>
+        <pre style="user-select: none;">{{ profile | json}}</pre>        
     </section>    
 </template>
 

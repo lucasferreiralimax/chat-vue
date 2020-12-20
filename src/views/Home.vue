@@ -1,7 +1,7 @@
 <template>
   <div :class='"chat-page "+menu'>
     <chat-header @menuHandled="onMenu" />
-    <chat-list :chats='chats_list' title='Pessoas Online' />
+    <chat-list :chats='chats_list' title='Conversas' />
     <router-view />
   </div>
 </template>

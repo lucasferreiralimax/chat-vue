@@ -14,12 +14,12 @@
           <img alt="Vue logo" src="../../assets/chat-icon-config.svg" width="30px">
           <span>Configurar</span>
         </router-link>
-        <router-link to="/login" tag="button" class="item">
+        <button class="item" @click="logout">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.35 6.35" width="15px">
             <path d="M3.172.53a.265.266 0 00-.262.268v2.127a.265.266 0 00.53 0V.798A.265.266 0 003.172.53zm1.544.532a.265.266 0 00-.026 0 .265.266 0 00-.147.47c.459.391.749.973.749 1.626 0 1.18-.944 2.131-2.116 2.131A2.12 2.12 0 011.06 3.16c0-.65.286-1.228.74-1.62a.265.266 0 10-.344-.404A2.667 2.667 0 00.53 3.158a2.66 2.66 0 002.647 2.663 2.657 2.657 0 002.645-2.663c0-.812-.363-1.542-.936-2.03a.265.266 0 00-.17-.066z" fill="#00" />
           </svg>
           <span>Sair</span>
-        </router-link>
+        </button>
       </div>
     </nav>
   </header>
@@ -81,6 +81,10 @@ export default {
         this.onMenuActive()
         this.onMenuEventListener()
       }
+    },
+    logout () {
+      this.$store.commit("updateAuth", false)
+      this.$router.push('/login')
     }
   },
   data () {
@@ -118,13 +122,17 @@ export default {
       font-size 12px
       padding 18px 2em
       justify-content center
-      color green
+      color #000
       display flex
       box-sizing border-box
       align-items center
       transition .3s all
+      border 0
       border-bottom 1px solid #ccc
       cursor pointer
+      outline none
+      &:focus
+        box-shadow inset 0 0 10px 5px rgba(#000, .2)
       svg
         width 40px
       span
@@ -135,6 +143,8 @@ export default {
       &:first-of-type
         background #2cca6b
         color #fff
+        img
+          filter invert(1)
     .bottom
       display flex
       flex-direction column
@@ -142,7 +152,9 @@ export default {
         width 25px
       .item:first-of-type
         background transparent
-        color green
+        color #000
+        img
+          filter invert(0)
 
 @media screen and (min-width 830px)
   .chat-header
@@ -156,7 +168,6 @@ export default {
     position relative
     &:hover
       .nav .item
-        // font-size 12px
         padding .5em 2em
         justify-content flex-start
         span
@@ -168,7 +179,6 @@ export default {
       .item
         border 0
         height 100px
-        // font-size 0
         padding .5em
         justify-content center
         span

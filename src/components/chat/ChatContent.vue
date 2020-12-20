@@ -114,7 +114,6 @@ export default {
       padding 20px
     li
       padding 0
-      margin 0 0 20px
       display flex
       flex-direction column
       justify-content center

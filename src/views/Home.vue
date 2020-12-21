@@ -1,8 +1,9 @@
 <template>
   <div :class='"chat-page "+menu'>
     <chat-header @menuHandled="onMenu" />
-    <chat-list :chats='chats_list' title='Conversas' />
+    <chat-list :chats='chats_list' title='Conversas' v-if="isMobile" />
     <router-view />
+    <chat-list :chats='chats_list' title='Conversas' v-if="isHome && !isMobile" />
   </div>
 </template>
 
@@ -19,16 +20,39 @@ export default {
     ChatHeader,
     ChatList
   },
+  data () {
+    return {
+      menu: '',
+      isMobile: null,
+      isHome: true,
+      mediaQuery: null
+    }
+  },
+  created () {
+    this.mediaQuery = window.matchMedia('(min-width: 830px)')
+    this.mediaQuery.addListener(this.doCheckMobile)
+    this.doCheckMobile()
+    this.checkPage(this.$route)
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to)
+      console.log(from)
+      this.checkPage()
+    }
+  },
   methods: {
     onMenu (value) {
       this.menu = value
+    },
+    doCheckMobile() {
+      this.isMobile = this.mediaQuery.matches
+    },    
+    checkPage() {
+      this.isHome = this.$route.name == 'welcome'
+      console.log(this.$route.name)
     }
-  },
-  data () {
-    return {
-      menu: ''
-    }
-  }
+  }  
 }
 </script>
 
@@ -99,11 +123,11 @@ export default {
 
 @media screen and (min-width 1500px)
   .chat-page.menu
-      grid-template-columns 250px 450px 1fr
+    grid-template-columns 250px 450px 1fr
 
 @media screen and (min-width 1800px)
   .chat-page.menu
-      grid-template-columns 450px 600px 1fr
+    grid-template-columns 450px 600px 1fr
 
 @keyframes status_online
   0%

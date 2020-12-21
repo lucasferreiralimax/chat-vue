@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="chat-content">
+  <section class="chat-content v-full">
     <section class="content">
       <ul class="chat-list" v-if="chats">
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
@@ -48,11 +48,11 @@ export default {
 
 <style lang="stylus">
 .chat-content
-  width calc(100% - 40px)
+  width calc(100% - 40px)  
   margin 0 auto
   padding-top 30px
   padding-bottom 75px
-  box-sizing border-box
+  box-sizing border-box  
   .footer,
   .content
     width 100%
@@ -113,7 +113,7 @@ export default {
     padding 0
     ul
       list-style none
-      height 100%
+      height calc(100% - 40px)
       overflow-y auto
       margin 0
       padding 20px
@@ -181,9 +181,21 @@ export default {
       transform scale(1.2)
     svg
       fill #fff
+@media screen and (max-width 830px)
+  .chat-content
+    height 100vh
+    &.v-full  
+      height 100vh
+      display flex
+      justify-content space-between
+      flex-direction column
+      .content
+        height 100%
+        ul
+          height calc(100% - 75px)
 @media screen and (min-width 830px)
   .chat-content
-    width calc(100% - 10px)
+    width calc(100% - 10px)    
     margin-right 10px
     padding-top 10px
     padding-bottom 0

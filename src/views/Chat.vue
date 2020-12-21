@@ -1,5 +1,5 @@
 <template>
-    <chat-content :chats='chats' />
+    <chat-content :chats='chats' :chatProfile="chat_profile" />
 </template>
 
 <script>
@@ -12,7 +12,8 @@ export default {
   computed: mapState(['chats_list']),
   data () {
     return {
-      chats: []
+      chats: [],
+      chat_profile: null
     }
   },
   created () { this.chatPage() },
@@ -28,6 +29,8 @@ export default {
       let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
       if(chat_current) {
         this.chats = chat_current.chats
+        let { name, photo, status, url } = chat_current
+        this.chat_profile = { name, photo, status, url }
       } else {
         this.$router.push({ name: 'notfound' })
       }
@@ -35,39 +38,3 @@ export default {
   }  
 }
 </script>
-
-<style lang="stylus">
-.user-image
-  padding 2px
-  box-shadow 5px 5px 32px 0px rgba(208,255,176,1)
-  display flex
-  align-self center
-  margin 0 5px 0 0
-  border-width 0
-  position relative
-  img
-    width 40px
-    height 40px
-    border-radius 100%
-  &.online:before
-    animation .5s status_online infinite alternate
-    content ''
-    width 15px
-    height 15px
-    border-radius 100px
-    border 3px #fff solid
-    position absolute
-    top 0
-    right 0
-    background green + 50
-  &.offline:before
-    content ''
-    width 15px
-    height 15px
-    border-radius 100px
-    border 3px #fff solid
-    position absolute
-    top 0
-    right 0
-    background #999 + 50
-</style>

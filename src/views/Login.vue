@@ -30,7 +30,7 @@ export default {
   methods: {
     login () {
       this.$store.commit("updateAuth", true)
-      console.log(this.$store.state.auth)
+      localStorage.setItem("auth", true)
       this.$router.push('/')
     }
   }

@@ -84,6 +84,7 @@ export default {
     },
     logout () {
       this.$store.commit("updateAuth", false)
+      localStorage.removeItem("auth")
       this.$router.push('/login')
     }
   },

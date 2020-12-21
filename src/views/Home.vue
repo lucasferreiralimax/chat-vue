@@ -76,6 +76,7 @@ export default {
   display flex
   align-self center
   margin 0 5px 0 0
+  border-radius 100%
   border-width 0
   position relative
   img

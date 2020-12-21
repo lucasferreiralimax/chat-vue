@@ -103,7 +103,6 @@ export default {
   height 55px
   overflow hidden
   background #fff
-
   transition .3s all
   z-index 99
   position fixed

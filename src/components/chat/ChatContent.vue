@@ -1,7 +1,15 @@
 <template lang="html">
-  <section class="chat-content v-full">
+  <section class="chat-content h-full">
     <section class="content">
       <ul class="chat-list" v-if="chats">
+        <li>
+          <div class="autor fixed" @click="profile(chatProfile.url)">
+            <figure class="user-image" :class="chatProfile.status">
+              <img :src="chatProfile.photo" alt="Photo profile">
+            </figure>
+            <span class="nome">{{ chatProfile.name }}</span>
+          </div>
+        </li>
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
           <div class="autor">
             <figure class="user-image" :class="chat.status" @click="profile(chat.url)">
@@ -29,7 +37,7 @@ import ChatInput from '@/components/chat/ChatInput'
 
 export default {
   name: 'chat-content',
-  props: ['chats'],
+  props: ['chats', 'chatProfile'],
   components: {
     ChatInput
   },
@@ -51,7 +59,6 @@ export default {
   width calc(100% - 40px)  
   margin 0 auto
   padding-top 30px
-  padding-bottom 75px
   box-sizing border-box  
   .footer,
   .content
@@ -116,7 +123,7 @@ export default {
       height calc(100% - 40px)
       overflow-y auto
       margin 0
-      padding 20px
+      padding 100px 20px 20px      
     li
       padding 0
       display flex
@@ -156,6 +163,21 @@ export default {
       pre
         text-align right !important
         margin 0
+
+.autor.fixed
+  width calc(100% - 80px)
+  padding 1em
+  border-radius 10px
+  position fixed !important
+  background #eee
+  box-sizing border-box
+  box-shadow 0 0 0 1px #fff, 0 0 10px rgba(#000, .2)
+  transform translateY(-75px)
+  cursor pointer
+  z-index 11
+  figure.user-image
+    margin-bottom 0 !important
+
 .content-input
   width 100%
   cursor text
@@ -184,15 +206,16 @@ export default {
 @media screen and (max-width 830px)
   .chat-content
     height 100vh
-    &.v-full  
-      height 100vh
+    &.h-full  
+      height calc(100vh - 125px)
       display flex
       justify-content space-between
       flex-direction column
+      margin-bottom 25px
       .content
-        height 100%
+        height calc(100% - 120px)
         ul
-          height calc(100% - 75px)
+          height calc(100% - 40px)
 @media screen and (min-width 830px)
   .chat-content
     width calc(100% - 10px)    

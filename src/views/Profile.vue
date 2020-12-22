@@ -1,7 +1,7 @@
 <template>
     <section class="chat-content">
         <h1>{{ profile_view ? this.$tc("views.profile.title", 1) : this.$tc("views.profile.title", 2) }} {{ profile.name }}</h1>
-        <pre style="user-select: none;">{{ profile | json}}</pre>        
+        <pre style="user-select: none;">{{ profile }}</pre>        
     </section>    
 </template>
 

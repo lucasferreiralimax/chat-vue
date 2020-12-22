@@ -5,9 +5,7 @@
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>{{ this.$t("nav.home") }}</span>
       </router-link>
-      <select class="languages" v-model="$i18n.locale">
-        <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ lang }}</option>
-      </select>
+      <languages />
       <div class="bottom">
         <router-link to="/profile" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-user.svg" width="20px">
@@ -29,8 +27,11 @@
 </template>
 
 <script>
+import Languages from '@/components/Languages'
+
 export default {
   name: 'chat-header',
+  components: { Languages },
   created () {
     window.addEventListener('resize', this.onMenuResize)
   },
@@ -159,10 +160,6 @@ export default {
         color #000
         img
           filter invert(0)
-
-.languages
-  margin 1em
-  padding .5em
 
 @media screen and (min-width 830px)
   .chat-header

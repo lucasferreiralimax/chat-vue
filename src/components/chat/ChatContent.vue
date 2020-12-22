@@ -165,7 +165,6 @@ export default {
         margin 0
 
 .autor.fixed
-  width calc(100% - 80px)
   padding 1em
   border-radius 10px
   position fixed !important

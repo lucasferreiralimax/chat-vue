@@ -1,0 +1,41 @@
+{
+    "nav": {
+      "home": "CHAT",
+      "edit": "Editar perfil",
+      "config": "Configuração",
+      "logout": "Sair"
+    },
+    "chatComponent": {
+      "sendMsg": "Enviar mensagem"
+    },
+    "views": {
+      "about": {
+        "text": "Interface de chat responsiva simples criada com"
+      },
+      "home": {
+        "title": "Conversas"
+      },
+      "welcome": {
+        "title": "Seja Bem-vindo",
+        "text": "Uma interface de chat simples criada com Vue.js"
+      },
+      "profile": {
+        "title": "Perfil | Editar perfil"
+      },
+      "config": {
+        "title": "Configuração",
+        "text": "Página Configuração"
+      },
+      "login": {
+        "title": "Conecte-se",
+        "user": "Usuário",
+        "pass": "Senha",
+        "enter": "Entrar"
+      },
+      "notfound": {
+        "title": "Página 404",
+        "text": "Desculpe pelo transtorno, esta página não existe",
+        "backHome": "Clique aqui para ir para a página inicial"
+      }
+    }
+  }

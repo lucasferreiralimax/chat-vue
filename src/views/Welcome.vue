@@ -1,7 +1,7 @@
 <template>
   <section class="chat-content welcome">
-    <h1>Seja bem-vindo {{ user }}</h1>
-    <p>Uma interface simples de chat criada com Vue.js</p>
+    <h1>{{ this.$t("views.welcome.title") }} {{ user }}</h1>
+    <p>{{ this.$t("views.welcome.text") }}</p>
   </section>    
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="page about">
-    <h1>Interface de chat simples com responsividade criado com <a href="https://vuejs.org">Vue.js</a></h1>
+    <h1>{{ this.$t("views.about.text") }} <a href="https://vuejs.org">Vue.js</a></h1>
   </div>
 </template>
 

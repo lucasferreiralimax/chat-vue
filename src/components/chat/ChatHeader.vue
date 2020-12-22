@@ -3,22 +3,25 @@
     <nav class="nav">
       <router-link to="/" tag="button" class="item">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
-        <span>CHAT</span>
+        <span>{{ this.$t("nav.home") }}</span>
       </router-link>
+      <select class="languages" v-model="$i18n.locale">
+        <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ lang }}</option>
+      </select>
       <div class="bottom">
         <router-link to="/profile" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-user.svg" width="20px">
-          <span>Editar Perfil</span>
+          <span>{{ this.$t("nav.edit") }}</span>
         </router-link>
         <router-link to="/config" tag="button" class="item">
           <img alt="Vue logo" src="../../assets/chat-icon-config.svg" width="30px">
-          <span>Configurar</span>
+          <span>{{ this.$t("nav.config") }}</span>
         </router-link>
         <button class="item" @click="logout">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6.35 6.35" width="15px">
             <path d="M3.172.53a.265.266 0 00-.262.268v2.127a.265.266 0 00.53 0V.798A.265.266 0 003.172.53zm1.544.532a.265.266 0 00-.026 0 .265.266 0 00-.147.47c.459.391.749.973.749 1.626 0 1.18-.944 2.131-2.116 2.131A2.12 2.12 0 011.06 3.16c0-.65.286-1.228.74-1.62a.265.266 0 10-.344-.404A2.667 2.667 0 00.53 3.158a2.66 2.66 0 002.647 2.663 2.657 2.657 0 002.645-2.663c0-.812-.363-1.542-.936-2.03a.265.266 0 00-.17-.066z" fill="#00" />
           </svg>
-          <span>Sair</span>
+          <span>{{ this.$t("nav.logout") }}</span>
         </button>
       </div>
     </nav>
@@ -91,7 +94,8 @@ export default {
   data () {
     return {
       menu: '',
-      title: 'Chat Header'
+      title: 'Chat Header',
+      langs: ['pt', 'en']
     }
   }
 }
@@ -155,6 +159,10 @@ export default {
         color #000
         img
           filter invert(0)
+
+.languages
+  margin 1em
+  padding .5em
 
 @media screen and (min-width 830px)
   .chat-header

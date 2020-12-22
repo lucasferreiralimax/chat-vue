@@ -1,10 +1,8 @@
 <template>
   <div class="page notfound">
-    <h1>Page 404</h1>
-    <p>Desculpe o inconveniente essa página não existe</p>
-    <router-link to="/" tag="a">
-      Clique aqui para ir para Home
-    </router-link>
+    <h1>{{ this.$t("views.notfound.title") }}</h1>
+    <p>{{ this.$t("views.notfound.text") }}</p>
+    <router-link to="/" tag="a">{{ this.$t("views.notfound.backHome") }}</router-link>
   </div>
 </template>
 

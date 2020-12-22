@@ -1,9 +1,9 @@
 <template>
   <div :class='"chat-page "+menu'>
     <chat-header @menuHandled="onMenu" />
-    <chat-list :chats='chats_list' title='Conversas' v-if="isMobile" />
+    <chat-list :chats='chats_list' :title='$t("views.home.title")' v-if="isMobile" />
     <router-view />
-    <chat-list :chats='chats_list' title='Conversas' v-if="isHome && !isMobile" />
+    <chat-list :chats='chats_list' :title='$t("views.home.title")' v-if="isHome && !isMobile" />
   </div>
 </template>
 

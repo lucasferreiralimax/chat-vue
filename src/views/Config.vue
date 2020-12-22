@@ -1,8 +1,8 @@
 <template>
-    <section class="chat-content">
-        <h1>Configuração</h1>
-        <p>Page config</p>
-    </section>    
+  <section class="chat-content">
+    <h1>{{ this.$t("views.config.title") }}</h1>
+    <p>{{ this.$t("views.config.text") }}</p>
+  </section>    
 </template>
 
 <script>

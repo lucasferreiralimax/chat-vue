@@ -27,8 +27,16 @@ const i18n = new VueI18n({
 
 const wrapper = shallowMount(Languages, { i18n, localVue })
 
+const langs = ['pt', 'en', 'ru', 'es', 'fr']
+
 describe('Languages', () => {
   it('is Languages a vue instance', () => {
     expect(wrapper.isVueInstance()).toBe(true)
   })
+  for(let [index, language] of langs.entries()) {
+    it(`Language ${language}`, async () => {
+      wrapper.vm.$i18n.locale = await language
+      expect(wrapper.vm.$i18n.locale).toContain(langs[index])
+    })
+  }
 })

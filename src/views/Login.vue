@@ -1,12 +1,13 @@
 <template>
-  <div class="login">
-    <form class="login-form" @submit.prevent="login">
+  <div class="login">    
+    <form class="login-form" @submit.prevent="login">      
+      <languages />
       <h1>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50px">
           <path d="M463.748 48.251c-64.336-64.336-169.013-64.335-233.349.001-43.945 43.945-59.209 108.706-40.181 167.461L4.396 401.536a14.988 14.988 0 00-4.395 10.606V497c0 8.291 6.709 15 15 15h84.858c3.984 0 7.793-1.582 10.605-4.395l21.211-21.226a15.002 15.002 0 004.292-12.334l-2.637-22.793 31.582-2.974a14.975 14.975 0 0013.521-13.521l2.974-31.582 22.793 2.651c4.233.571 8.496-.85 11.704-3.691a15.04 15.04 0 005.024-11.206V363h27.422c3.984 0 7.793-1.582 10.605-4.395l38.467-37.958c58.74 19.043 122.381 4.929 166.326-39.046 64.336-64.335 64.336-169.014 0-233.35zm-42.435 106.07c-17.549 17.549-46.084 17.549-63.633 0s-17.549-46.084 0-63.633 46.084-17.549 63.633 0 17.548 46.084 0 63.633z"/>
         </svg>
-        <span>{{ this.$t("views.login.title") }}</span>
-      </h1>
+        <span>{{ this.$t("views.login.title") }}</span>        
+      </h1>      
       <label for="user">{{ this.$t("views.login.user") }}</label>
       <input id="user" type="text" name="user" :placeholder='$t("views.login.user")' v-model="user">
       <br>
@@ -19,8 +20,11 @@
 </template>
 
 <script>
+import Languages from '@/components/Languages'
+
 export default {
   name: 'name',
+  components: { Languages },
   data() {
     return {
       user: '',
@@ -44,9 +48,13 @@ export default {
   align-items center
   justify-content center
   padding 20px
-  background #222 url('../assets/everest.jpg') no-repeat
+  background #222 url('../assets/amazonas.jpg') no-repeat
   background-size cover
   box-sizing border-box
+  .languages
+    position absolute
+    top 0
+    right 0
 .login-form
   background linear-gradient(-45deg, #fff, #aaa)
   border-radius 10px

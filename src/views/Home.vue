@@ -50,7 +50,6 @@ export default {
     },    
     checkPage() {
       this.isHome = this.$route.name == 'welcome'
-      console.log(this.$route.name)
     }
   }  
 }

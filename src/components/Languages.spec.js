@@ -34,9 +34,15 @@ describe('Languages', () => {
     expect(wrapper.isVueInstance()).toBe(true)
   })
   for(let [index, language] of langs.entries()) {
-    it(`Language ${language}`, async () => {
+    it(`Language select ${language}`, async () => {
+      const select = wrapper.find('.languages')
+      await select.setValue(language)
+      expect(select.element.value).toBe(langs[index])
+    })
+    it(`Language change locale ${language}`, async () => {
       wrapper.vm.$i18n.locale = await language
-      expect(wrapper.vm.$i18n.locale).toContain(langs[index])
+      expect(wrapper.vm.$i18n.locale).toBe(langs[index])
+      
     })
   }
 })

@@ -29,7 +29,7 @@ export default {
   margin 20px auto 0
   border 0
   border-radius 5px
-  background #fff
+  background var(--main-bg-color)
   padding 10px
   position relative
   box-sizing border-box
@@ -39,7 +39,7 @@ export default {
   .input
     border 0
   .panel-heading
-    color green + 100
+    color var(--main-color-primary)
     background transparent
     font-weight bold
     padding 0.5rem
@@ -60,7 +60,7 @@ export default {
   border-radius 10px
   align-items center
   text-decoration none
-  color #333
+  color var(--main-color)
   &:hover
     color green + 100
     background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))

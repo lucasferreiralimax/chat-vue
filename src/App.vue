@@ -6,6 +6,12 @@
 
 <style lang="stylus">
 
+:root
+  --main-color #000
+  --main-color-primary #2cca6b
+  --main-bg-color #fff
+  --main-bg-color-rgba 0, 0, 0
+
 ::-webkit-scrollbar-track
   background #fff
 
@@ -20,17 +26,18 @@
 
 body
   margin 0
+  background var(--main-bg-color)
 
 #app
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  color #2c3e50
+  color var(--main-color) //#2c3e50
 
 .page
   padding 2em
   box-sizing border-box
   a
     text-decoration none
-    color #2cca6b
+    color var(--main-color-primary) //#2cca6b
 </style>

@@ -42,7 +42,6 @@ describe('Languages', () => {
     it(`Language change locale ${language}`, async () => {
       wrapper.vm.$i18n.locale = await language
       expect(wrapper.vm.$i18n.locale).toBe(langs[index])
-      
     })
   }
 })

@@ -79,13 +79,15 @@ export default {
       left 60px
       bottom 10px
   .input
+    background var(--main-bg-color)
+    color var(--main-color)
     width 100%
     box-sizing border-box
     border 0
     outline none
     height 60px
   .btn.send
-    background green + 50
+    background var(--main-color-primary)
     position absolute
     bottom -25px
     right -25px

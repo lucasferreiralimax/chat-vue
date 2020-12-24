@@ -24,7 +24,8 @@
       },
       "config": {
         "title": "Configuration",
-        "text": "Page Configuration"
+        "text": "Page Configuration",
+        "darkMode": "Mode Noir"
       },
       "login": {
         "title": "S'identifier",

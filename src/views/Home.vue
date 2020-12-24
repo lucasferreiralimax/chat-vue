@@ -52,8 +52,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.chat-page
-  background rgba(#aaa, .3)
+.chat-page  
   padding 0
   height 100vh
   display flex
@@ -65,9 +64,15 @@ export default {
   left 0
   bottom 0
 
+@css {
+  .chat-page {
+    background: rgba(var(--main-bg-color-rgba), .1);
+  }  
+}
+
 .user-image
   padding 2px
-  box-shadow 5px 5px 32px 0px rgba(208,255,176,1)
+  box-shadow 5px 5px 32px 0px var(--main-bg-color)
   display flex
   align-self center
   margin 0 5px 0 0

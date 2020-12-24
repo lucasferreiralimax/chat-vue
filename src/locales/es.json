@@ -24,7 +24,8 @@
       },
       "config": {
         "title": "Configuración",
-        "text": "Página Configuración"
+        "text": "Página Configuración",
+        "darkMode": "Modo oscuro"
       },
       "login": {
         "title": "Iniciar sesión",

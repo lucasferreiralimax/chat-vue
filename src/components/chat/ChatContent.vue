@@ -64,7 +64,7 @@ export default {
   .content
     width 100%
     border-radius 5px
-    background #fff
+    background var(--main-bg-color)
     padding 20px
     box-sizing border-box
   .footer
@@ -168,40 +168,15 @@ export default {
   padding 1em
   border-radius 10px
   position fixed !important
-  background #eee
+  background var(--main-bg-color)
   box-sizing border-box
-  box-shadow 0 0 0 1px #fff, 0 0 10px rgba(#000, .2)
+  box-shadow 0 0 0 1px rgba(#fff, .2), 0 0 10px rgba(#000, .2)
   transform translateY(-75px)
   cursor pointer
   z-index 11
   figure.user-image
     margin-bottom 0 !important
 
-.content-input
-  width 100%
-  cursor text
-  .input
-    width calc(100% - 110px)
-    box-sizing border-box
-    border 0
-    outline none
-    height 80px
-  .btn.send
-    background green + 50
-    position absolute
-    top 0
-    right 0
-    border-radius 100px
-    font-size 0
-    border 0
-    width 40px
-    height 40px
-    cursor pointer
-    transition .3s all
-    &:hover
-      transform scale(1.2)
-    svg
-      fill #fff
 @media screen and (max-width 830px)
   .chat-content
     height 100vh

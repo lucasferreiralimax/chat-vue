@@ -19,11 +19,7 @@ export default {
   },
   created () { this.profilePage() },
   watch: {
-    $route(to, from) {
-      console.log(to)
-      console.log(from)
-      this.profilePage()
-    }
+    $route() { this.profilePage() }
   },  
   methods: {
     profilePage () {

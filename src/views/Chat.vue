@@ -18,11 +18,7 @@ export default {
   },
   created () { this.chatPage() },
   watch: {
-    $route(to, from) {
-      console.log(to)
-      console.log(from)
-      this.chatPage()
-    }
+    $route() { this.chatPage() }
   },  
   methods: {
     chatPage () {

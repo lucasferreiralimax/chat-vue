@@ -35,11 +35,7 @@ export default {
     this.checkPage(this.$route)
   },
   watch: {
-    $route(to, from) {
-      console.log(to)
-      console.log(from)
-      this.checkPage()
-    }
+    $route() { this.checkPage() }
   },
   methods: {
     onMenu (value) {

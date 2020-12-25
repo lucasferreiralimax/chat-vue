@@ -12,10 +12,9 @@
   --main-bg-color-rgba 0, 0, 0
 
 ::-webkit-scrollbar-track
-  background #fff
+  background var(--main-bg-color)
 
 ::-webkit-scrollbar
-  background-color rgba(#fff, 0)
   width 6px
 
 ::-webkit-scrollbar-thumb

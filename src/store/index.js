@@ -15,6 +15,7 @@ export default new Vuex.Store({
       url: 'lucas',
     },
     auth: false,
+    dark: false,
     chats_list: chats_list,
     chat_profiles: chat_profiles
   },
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     },
     updateAuth (state, value) {
       state.auth = value
+    },
+    updateDarkMode (state, value) {
+      state.dark = value
     },
   },
   actions: {

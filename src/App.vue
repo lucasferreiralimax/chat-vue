@@ -5,7 +5,6 @@
 </template>
 
 <style lang="stylus">
-
 :root
   --main-color #000
   --main-color-primary #2cca6b

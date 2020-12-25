@@ -38,10 +38,13 @@ body
   box-sizing border-box
   &.chat-content
     padding 0 2em
+    width 100%
     @media screen and (min-width 830px)
       padding 0 1em
+      width calc(100% - 10px)
     @media screen and (min-width 1300px)
       padding 1em 0
+      width calc(100% - 30px)
   a
     text-decoration none
     color var(--main-color-primary) //#2cca6b

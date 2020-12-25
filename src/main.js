@@ -8,7 +8,9 @@ import i18n from './i18n'
 Vue.config.productionTip = false
 
 import { mixinDarkMode } from '@/mixins/mixinDarkMode.js'
+import { mixinCheckMobile } from '@/mixins/mixinCheckMobile.js'
 Vue.mixin(mixinDarkMode)
+Vue.mixin(mixinCheckMobile)
 
 new Vue({
   router,

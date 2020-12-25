@@ -22,16 +22,11 @@ export default {
   },
   data () {
     return {
-      menu: '',
-      isMobile: null,
-      isHome: true,
-      mediaQuery: null
+      menu: '',      
+      isHome: true      
     }
   },
   created () {
-    this.mediaQuery = window.matchMedia('(min-width: 830px)')
-    this.mediaQuery.addListener(this.doCheckMobile)
-    this.doCheckMobile()
     this.checkPage(this.$route)
   },
   watch: {
@@ -40,10 +35,7 @@ export default {
   methods: {
     onMenu (value) {
       this.menu = value
-    },
-    doCheckMobile() {
-      this.isMobile = this.mediaQuery.matches
-    },    
+    }, 
     checkPage() {
       this.isHome = this.$route.name == 'welcome'
     }

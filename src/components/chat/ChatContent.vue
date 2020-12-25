@@ -198,7 +198,7 @@ export default {
       .content
         height calc(100% - 120px)
         ul
-          height calc(100% - 40px)
+          height calc(100% - 120px)
 @media screen and (min-width 830px)
   .chat-content
     width calc(100% - 10px)    

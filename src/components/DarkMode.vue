@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     darkMode (type) {
-      let root = document.body
+      let root = document.documentElement
       if(type) {
         root.style.setProperty("--main-color", "#fff")
         root.style.setProperty("--main-bg-color", "#333")

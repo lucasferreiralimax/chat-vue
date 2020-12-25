@@ -1,5 +1,5 @@
 <template>
-    <section class="chat-content profile">
+    <section class="chat-content page profile">
         <h1>{{ profile_view ? this.$tc("views.profile.title", 1) : this.$tc("views.profile.title", 2) }} {{ profile.name }}</h1>
         <img class="photo" :src="profile.photo" alt="Photo profile">
         <p>Status: {{ profile.status }}</p>

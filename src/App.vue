@@ -36,6 +36,12 @@ body
 .page
   padding 2em
   box-sizing border-box
+  &.chat-content
+    padding 0 2em
+    @media screen and (min-width 830px)
+      padding 0 1em
+    @media screen and (min-width 1300px)
+      padding 1em 0
   a
     text-decoration none
     color var(--main-color-primary) //#2cca6b

@@ -1,5 +1,5 @@
 <template>
-  <section class="chat-content welcome">
+  <section class="chat-content page welcome">
     <h1>{{ this.$t("views.welcome.title") }} {{ user }}</h1>
     <p>{{ this.$t("views.welcome.text") }}</p>
   </section>    

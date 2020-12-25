@@ -1,5 +1,5 @@
 <template>
-  <section class="chat-content">
+  <section class="chat-content page">
     <h1>{{ this.$t("views.config.title") }}</h1>
     <p>{{ this.$t("views.config.text") }}</p>
     <dark-mode />

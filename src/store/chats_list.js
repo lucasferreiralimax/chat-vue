@@ -9,7 +9,7 @@ export let chats_list = [
     url: 'lucas',
     chats: [
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'offline',
         content: `Deus é Maior`,
         date: '21:09 AM',
@@ -19,7 +19,7 @@ export let chats_list = [
         open: false
       },
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'online',
         content: `olhe em volta`,
         date: '21:09 AM',
@@ -29,7 +29,7 @@ export let chats_list = [
         open: true
       },
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'offline',
         content: `não duvide`,
         date: '21:09 AM',
@@ -39,7 +39,7 @@ export let chats_list = [
         open: false
       },
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'offline',
         content: `Fé...`,
         date: '21:09 AM',
@@ -70,7 +70,7 @@ export let chats_list = [
         open: false
       },
       {
-        name: 'Dr. L',
+        name: 'L',
         status: 'online',
         content: `Todo dia aprendendo`,
         date: '21:09 AM',

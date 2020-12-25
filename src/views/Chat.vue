@@ -25,8 +25,8 @@ export default {
       let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
       if(chat_current) {
         this.chats = chat_current.chats
-        let { name, photo, status, url } = chat_current
-        this.chat_profile = { name, photo, status, url }
+        let { name, photo, status, url, status_persona } = chat_current
+        this.chat_profile = { name, photo, status, url, status_persona }
       } else {
         this.$router.push({ name: 'notfound' })
       }

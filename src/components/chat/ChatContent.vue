@@ -7,7 +7,10 @@
             <figure class="user-image" :class="chatProfile.status">
               <img :src="chatProfile.photo" alt="Photo profile">
             </figure>
-            <span class="nome">{{ chatProfile.name }}</span>
+            <div class="block">
+              <span class="nome">{{ chatProfile.name }}</span>
+              <span class="status_persona">{{ chatProfile.status_persona }}</span>
+            </div>            
           </div>
         </li>
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
@@ -176,6 +179,12 @@ export default {
   z-index 11
   figure.user-image
     margin-bottom 0 !important
+  .block
+    display flex
+    flex-direction column
+    .status_persona
+      margin-top .5em
+      margin-left 0
 
 @media screen and (max-width 830px)
   .chat-content

@@ -65,15 +65,7 @@ export default {
     color green + 100
     background linear-gradient(to left, rgba(#000, .2), rgba(#fff,0))
   .nome
-    margin-left 10px
-  .status_persona
-    font-size 11px
-    color #aaa
-    margin-left 10px
-    overflow hidden
-    text-overflow ellipsis
-    white-space pre
-    width 100%
+    margin-left 10px  
   .time
     position absolute
     bottom 10px
@@ -97,6 +89,15 @@ export default {
     top 10px
     font-size 12px
     font-weight bold
+
+.status_persona
+  font-size 11px
+  color #aaa
+  margin-left 10px
+  overflow hidden
+  text-overflow ellipsis
+  white-space pre
+  width 100%
 
 @media screen and (min-width 830px)
   .sidebar.panel

@@ -1,10 +1,15 @@
 <template lang="html">
-  <header class="chat-header">
-    <nav class="nav">
+  <header class="chat-header" :class="{ 'menu-show': menuBars }">
+    <button class="menu-bars" :class="{ 'menu-show': menuBars }" type="button" @click="menuBars = !menuBars" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30px">
+        <path d="M256 0C114.837 0 0 114.837 0 256s114.837 256 256 256 256-114.837 256-256S397.163 0 256 0zm106.667 362.667H149.333c-11.797 0-21.333-9.557-21.333-21.333 0-11.776 9.536-21.333 21.333-21.333h213.333c11.797 0 21.333 9.557 21.333 21.333.001 11.775-9.535 21.333-21.332 21.333zm0-85.334H149.333C137.536 277.333 128 267.776 128 256s9.536-21.333 21.333-21.333h213.333c11.797 0 21.333 9.557 21.333 21.333s-9.535 21.333-21.332 21.333zm0-85.333H149.333C137.536 192 128 182.443 128 170.667s9.536-21.333 21.333-21.333h213.333c11.797 0 21.333 9.557 21.333 21.333S374.464 192 362.667 192z"/>
+      </svg>
+    </button>
+    <nav class="nav" @click="menuBars = false">
       <router-link to="/" tag="button" class="item">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>{{ this.$t("nav.home") }}</span>
-      </router-link>
+      </router-link>      
       <languages />
       <div class="bottom">
         <router-link to="/profile" tag="button" class="item">
@@ -100,6 +105,7 @@ export default {
   data () {
     return {
       menu: '',
+      menuBars: false,
       title: 'Chat Header',
       langs: ['pt', 'en']
     }
@@ -108,6 +114,25 @@ export default {
 </script>
 
 <style lang="stylus">
+.menu-bars
+  background transparent
+  border 0
+  padding 11px
+  position absolute
+  top 0
+  right 0
+  cursor pointer
+  z-index 99
+  opacity .8
+  &.menu-show svg
+    fill var(--main-color)
+    filter drop-shadow( 0 2px 2px var(--main-bg-color))
+  svg
+    fill var(--main-bg-color)
+    filter drop-shadow( 0 2px 2px var(--main-color))
+  @media screen and (min-width 830px)
+    display none
+
 .chat-header
   width 100%
   height 55px
@@ -117,7 +142,7 @@ export default {
   z-index 99
   position fixed
   top 0
-  &:hover
+  &.menu-show
     height auto
   .nav
     display flex

@@ -7,14 +7,14 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.976 51.976" width="30px" v-else>
         <path d="M44.373 7.603c-10.137-10.137-26.632-10.138-36.77 0-10.138 10.138-10.137 26.632 0 36.77s26.632 10.138 36.77 0c10.137-10.138 10.137-26.633 0-36.77zm-8.132 28.638a2 2 0 01-2.828 0l-7.425-7.425-7.778 7.778a2 2 0 11-2.828-2.828l7.778-7.778-7.425-7.425a2 2 0 112.828-2.828l7.425 7.425 7.071-7.071a2 2 0 112.828 2.828l-7.071 7.071 7.425 7.425a2 2 0 010 2.828z"/>
       </svg>
-    </button>
-    <nav class="nav" @click="menuBars = false">
-      <router-link to="/" tag="button" class="item">
+    </button>    
+    <nav class="nav">
+      <router-link to="/" tag="button" class="item" @click.native="menuBars = false">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>{{ this.$t("nav.home") }}</span>
       </router-link>      
       <languages />
-      <div class="bottom">
+      <div class="bottom" @click="menuBars = false">
         <router-link to="/profile" tag="button" class="item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"/>
@@ -35,7 +35,8 @@
           <span>{{ this.$t("nav.logout") }}</span>
         </button>
       </div>
-    </nav>
+    </nav> 
+    <div class="nav-overlay" :class="{ 'active': menuBars }" @click="menuBars = false"></div>   
   </header>
 </template>
 
@@ -61,6 +62,13 @@ export default {
   },
   destroyed () {
     window.removeEventListener('resize', this.onMenuResize)
+  },
+  watch: {
+    isMobile (value) {
+      if(value) {
+        this.menuBars = false
+      }      
+    }    
   },
   methods: {
     onMenuActive () {
@@ -128,13 +136,27 @@ export default {
   z-index 99
   opacity .8
   &.menu-show svg
-    fill var(--main-color)
-    filter drop-shadow( 0 2px 2px var(--main-bg-color))
+    fill rgba(#000, .7)
+    filter drop-shadow( 0 2px 2px #fff)
   svg
-    fill var(--main-bg-color)
-    filter drop-shadow( 0 2px 2px var(--main-color))
+    fill #fff
+    filter drop-shadow( 0 2px 2px rgba(#000, .7))
   @media screen and (min-width 830px)
     display none
+
+.nav-overlay
+  background rgba(#000, .5)
+  z-index -1
+  position fixed
+  top 0
+  bottom 0
+  right 0
+  left 0
+  opacity 0
+  pointer-events none
+  &.active
+    opacity 1
+    pointer-events all
 
 .chat-header
   width 100%
@@ -148,6 +170,7 @@ export default {
   &.menu-show
     height auto
   .nav
+    background var(--main-bg-color)
     display flex
     flex-direction column
     justify-content flex-start
@@ -155,6 +178,7 @@ export default {
     width 100%
     height 100%
     position relative
+    z-index 1
     .item
       height 55px
       font-size 12px
@@ -184,8 +208,9 @@ export default {
         background var(--main-color-primary)
         border-top 1px solid rgba(#000, .3)
         color #fff
+        text-shadow 0 2px 2px rgba(#000, .4)
         img
-          filter invert(1)
+          filter invert(1) drop-shadow(0 2px 2px rgba(#000, .7))
     .bottom
       display flex
       flex-direction column
@@ -194,6 +219,7 @@ export default {
       .item:first-of-type        
         background transparent
         color var(--main-color)
+        text-shadow none
         img
           filter invert(0)
 

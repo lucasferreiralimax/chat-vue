@@ -25,7 +25,8 @@
     "config": {
       "title": "Configuration",
       "text": "Page Configuration",
-      "darkMode": "Dark Mode"
+      "darkMode": "Dark Mode",
+      "language": "Language"
     },
     "login": {
       "title": "Login",

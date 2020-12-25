@@ -25,7 +25,8 @@
       "config": {
         "title": "Configuration",
         "text": "Page Configuration",
-        "darkMode": "Mode Noir"
+        "darkMode": "Mode Noir",
+        "language": "Langue"
       },
       "login": {
         "title": "S'identifier",

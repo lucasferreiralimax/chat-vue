@@ -25,7 +25,8 @@
       "config": {
         "title": "Configuração",
         "text": "Página Configuração",
-        "darkMode": "Modo Escuro"
+        "darkMode": "Modo Escuro",
+        "language": "Idioma"
       },
       "login": {
         "title": "Conecte-se",

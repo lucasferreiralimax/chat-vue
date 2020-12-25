@@ -61,11 +61,12 @@ export default {
     right 0
   .dark-mode
     position absolute
-    bottom 0
-    right 0
-    padding .5em 1em
-    border-top-left-radius 10px
+    top 4px
+    left -8px
+    padding 0 10px
+    border-radius 6px
     background var(--main-bg-color)
+    transform scale(.75)
 .login-form
   background var(--main-bg-color)
   border-radius 10px

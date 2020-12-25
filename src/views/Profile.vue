@@ -1,7 +1,10 @@
 <template>
-    <section class="chat-content">
+    <section class="chat-content profile">
         <h1>{{ profile_view ? this.$tc("views.profile.title", 1) : this.$tc("views.profile.title", 2) }} {{ profile.name }}</h1>
-        <pre style="user-select: none;">{{ profile }}</pre>        
+        <img class="photo" :src="profile.photo" alt="Photo profile">
+        <p>Status: {{ profile.status }}</p>
+        <p>{{ profile.status_persona }}</p>
+        <p>Created: {{ profile.date_created }}</p>
     </section>    
 </template>
 
@@ -35,3 +38,12 @@ export default {
   }  
 }
 </script>
+
+<style lang="stylus">
+  .profile .photo
+    border-radius 10px
+    width 150px
+    height 150px
+    float left
+    margin-right 1em
+</style>

@@ -27,7 +27,7 @@ const i18n = new VueI18n({
 
 const wrapper = shallowMount(Languages, { i18n, localVue })
 
-const langs = ['pt', 'en', 'ru', 'es', 'fr']
+const langs = ['pt-BR', 'en-US', 'ru-RU', 'es-ES', 'fr-FR']
 
 describe('Languages', () => {
   it('is Languages a vue instance', () => {

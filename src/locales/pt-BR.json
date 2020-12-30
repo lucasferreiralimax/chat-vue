@@ -20,7 +20,9 @@
         "text": "Uma interface de chat simples criada com Vue.js"
       },
       "profile": {
-        "title": "Perfil | Editar perfil"
+        "title": "Perfil | Editar perfil",
+        "status": "Estado",
+        "created": "Conta criada em"
       },
       "config": {
         "title": "Configuração",

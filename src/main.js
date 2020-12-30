@@ -4,8 +4,10 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
+import moment from 'moment'
 
 Vue.config.productionTip = false
+Vue.prototype.moment = moment
 
 import { mixinDarkMode } from '@/mixins/mixinDarkMode.js'
 import { mixinCheckMobile } from '@/mixins/mixinCheckMobile.js'

@@ -33,7 +33,7 @@ export default {
             name: this.user.name,
             status: this.user.status,
             content: `${inputChat.value}`,
-            date: '21:09 AM',
+            date: this.moment().format('LTS'),
             notification: 1,
             photo: this.user.photo,
             url: 'lucas',

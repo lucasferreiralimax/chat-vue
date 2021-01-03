@@ -11,6 +11,7 @@ describe('Chat simples input', () => {
       .type('{enter}')
       .type('All good for you')
       .type('{enter}')
+    cy.wait(1000)
   })
   it('Chat com Bot', () => {
     LoginMock()
@@ -22,6 +23,7 @@ describe('Chat simples input', () => {
       .type('{enter}')
       .type('Muchas gracias')
       .type('{enter}')
+    cy.wait(1000)
   })
   it('Chat com Hub', () => {
     LoginMock()
@@ -33,5 +35,6 @@ describe('Chat simples input', () => {
       .type('{enter}')
       .type('Tout le meilleur pour toi')
       .type('{enter}')
+    cy.wait(1000)
   })
 })

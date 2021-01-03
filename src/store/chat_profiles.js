@@ -13,7 +13,7 @@ export let chat_profiles = [
       name: 'Vue',
       status: 'offline',
       status_persona: 'Às vezes brilha o Sol em demasia',
-      date_created: moment('2021-01-01 02:00:00').locale(localStorage.getItem("lang")).format('MMMM Do YYYY, h:mm:ss a'),
+      date_created: moment('2021-02-01 02:00:00').locale(localStorage.getItem("lang")).format('MMMM Do YYYY, h:mm:ss a'),
       photo: 'https://avatars1.githubusercontent.com/u/13300590?s=200&v=4',
       url: 'vue'    
     },

@@ -30,7 +30,7 @@ body
   font-family Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  color var(--main-color) //#2c3e50
+  color var(--main-color)
 
 .page
   padding 2em
@@ -46,5 +46,5 @@ body
       width calc(100% - 30px)
   a
     text-decoration none
-    color var(--main-color-primary) //#2cca6b
+    color var(--main-color-primary)
 </style>

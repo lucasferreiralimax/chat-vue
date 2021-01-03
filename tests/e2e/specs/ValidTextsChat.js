@@ -1,0 +1,37 @@
+import { LoginMock } from '../support/_helpers'
+
+describe('Chat simples input', () => {
+  it('Chat com Vue', () => {
+    LoginMock()
+    cy.visit('/chat/vue')
+    cy.get('.chat-input .input')
+      .type('Hello my friend Vue, how are you doing?')
+      .type('{enter}')
+      .type('Happy new year')
+      .type('{enter}')
+      .type('All good for you')
+      .type('{enter}')
+  })
+  it('Chat com Bot', () => {
+    LoginMock()
+    cy.visit('/chat/bot')
+    cy.get('.chat-input .input')
+      .type('Hola mi amigo Bot, como usted estais?')
+      .type('{enter}')
+      .type('Bueno ano nuevo para usted si')
+      .type('{enter}')
+      .type('Muchas gracias')
+      .type('{enter}')
+  })
+  it('Chat com Hub', () => {
+    LoginMock()
+    cy.visit('/chat/hub')
+    cy.get('.chat-input .input')
+      .type('Bonjour mon ami, comment ça va?')
+      .type('{enter}')
+      .type('Bonne année à toi')
+      .type('{enter}')
+      .type('Tout le meilleur pour toi')
+      .type('{enter}')
+  })
+})

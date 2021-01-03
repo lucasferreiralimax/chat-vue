@@ -9,7 +9,7 @@
       </svg>
     </button>    
     <nav class="nav">
-      <router-link to="/" tag="button" class="item" @click.native="menuBars = false">
+      <router-link to="/" tag="button" class="item logo" @click.native="menuBars = false">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>{{ this.$t("nav.home") }}</span>
       </router-link>      

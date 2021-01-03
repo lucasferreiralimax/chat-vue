@@ -17,7 +17,7 @@
       },
       "welcome": {
         "title": "Sois le bienvenu",
-        "text": "Une interface de chat simple créée avec Vue.js"
+        "text": "Une interface de bavarder simple créée avec Vue.js"
       },
       "profile": {
         "title": "Profil | Editer le profil",

@@ -12,7 +12,7 @@
       <label for="user">{{ this.$t("views.login.user") }}</label>
       <input id="user" type="text" name="user" :placeholder='$t("views.login.user")' v-model="user">
       <br>
-      <label for="password">{{ this.$t("views.login.user") }}</label>
+      <label for="password">{{ this.$t("views.login.pass") }}</label>
       <input id="password" type="password" name="password" :placeholder='$t("views.login.pass")' v-model="pass">
       <br>
       <button name="button" :disabled="!user || !pass">{{ this.$t("views.login.enter") }}</button>

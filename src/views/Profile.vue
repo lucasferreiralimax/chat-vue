@@ -5,7 +5,7 @@
         <p>{{ this.$t('views.profile.status') }}: {{ profile.status }}</p>
         <p>{{ profile.status_persona }}</p>
         <p>{{ this.$t('views.profile.created') }}: {{ profile.date_created }}</p>
-    </section>    
+    </section>
 </template>
 
 <script>
@@ -23,19 +23,14 @@ export default {
   created () { this.profilePage() },
   watch: {
     $route() { this.profilePage() }
-  },  
+  },
   methods: {
     profilePage () {
       let profile_current = this.chat_profiles.find(el => el.url == this.$route.params.id)
-      if(profile_current) {
-        this.profile = profile_current
-        this.profile_view = true
-      } else {
-        this.profile = this.chat_profiles[0]
-        this.profile_view = false
-      }
+      this.profile_view = Boolean(profile_current)
+      profile_current ? this.profile = profile_current : this.profile = this.chat_profiles[0]
     }
-  }  
+  }
 }
 </script>
 

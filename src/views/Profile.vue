@@ -37,8 +37,8 @@ export default {
 <style lang="stylus">
   .profile .photo
     border-radius 10px
-    width 150px
-    height 150px
     float left
+    height 150px
     margin-right 1em
+    width 150px
 </style>

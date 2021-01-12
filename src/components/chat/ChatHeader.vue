@@ -116,13 +116,13 @@ export default {
 .menu-bars
   background transparent
   border 0
+  cursor pointer
+  opacity .8
   padding 11px
   position absolute
-  top 0
   right 0
-  cursor pointer
+  top 0
   z-index 99
-  opacity .8
   &.menu-show svg
     fill rgba(#000, .7)
     filter drop-shadow( 0 2px 2px #fff)
@@ -134,64 +134,64 @@ export default {
 
 .nav-overlay
   background rgba(#000, .5)
-  z-index -1
-  position fixed
-  top 0
   bottom 0
-  right 0
   left 0
   opacity 0
   pointer-events none
+  position fixed
+  right 0
+  top 0
+  z-index -1
   &.active
     opacity 1
     pointer-events all
 
 .chat-header
-  width 100%
+  background var(--main-bg-color)
   height 55px
   overflow hidden
-  background var(--main-bg-color)
-  transition .3s all
-  z-index 99
   position fixed
   top 0
+  transition .3s all
+  width 100%
+  z-index 99
   &.menu-show
     height auto
   .nav
+    align-items stretch
     background var(--main-bg-color)
     display flex
     flex-direction column
-    justify-content flex-start
-    align-items stretch
-    width 100%
     height 100%
+    justify-content flex-start
     position relative
+    width 100%
     z-index 1
     .item
-      height 55px
-      font-size 12px
-      padding 18px 2em
-      justify-content center
-      background transparent
-      color var(--main-color)
-      display flex
-      box-sizing border-box
       align-items center
-      transition .3s all
+      background transparent
       border 0
       border-bottom 1px solid rgba(#000, .3)
+      box-sizing border-box
+      color var(--main-color)
       cursor pointer
+      display flex
+      font-size 12px
+      height 55px
+      justify-content center
       outline none
+      padding 18px 2em
+      transition .3s all
       &:focus
         box-shadow inset 0 0 10px 5px rgba(#000, .2)
       svg
-        width 40px
         fill var(--main-color)
+        width 40px
       span
-        margin-left 10px
-        text-transform uppercase
         font-weight bold
+        margin-left 10px
         opacity 1
+        text-transform uppercase
       &:first-of-type
         background var(--main-color-primary)
         border-top 1px solid rgba(#000, .3)
@@ -213,48 +213,48 @@ export default {
 
 @media screen and (min-width 830px)
   .chat-header
-    width 100%
     min-height 100vh
-    overflow-y auto
     overflow-x hidden
-    transition .3s width
-    z-index 99
+    overflow-y auto
     position relative
+    transition .3s width
+    width 100%
+    z-index 99
     &:hover
       .nav .item
-        padding .5em 2em
         justify-content flex-start
+        padding .5em 2em
         span
+          display block
           opacity 1
           transform scale(1)
-          display block
     .nav
       height 100vh
       .item
         height 100px
-        padding .5em
         justify-content center
+        padding .5em
         span
+          display none
           opacity 0
           transform scale(0)
-          display none
     .bottom
-      height 150px
-      position relative
       bottom 0
-      right 0
+      height 150px
       left 0
+      position relative
+      right 0
 @media screen and (min-width 1300px)
   .chat-header
     .nav .item
-      padding .5em 2em
       justify-content flex-start
+      padding .5em 2em
       span
+        display block
         opacity 1
         transform scale(1)
-        display block
 @media screen and (min-height 550px) and (min-width 830px)
   .chat-header .bottom
-    position absolute
     bottom 0
+    position absolute
 </style>

@@ -2,7 +2,7 @@
   <section class="chat-content page welcome">
     <h1>{{ this.$t("views.welcome.title") }} {{ user }}</h1>
     <p>{{ this.$t("views.welcome.text") }}</p>
-  </section>    
+  </section>
 </template>
 
 <script>
@@ -19,6 +19,6 @@ export default {
 <style lang="stylus">
 @media screen and (max-width 830px)
   .welcome
-    padding 0 1.5em
     height auto !important
+    padding 0 1.5em
 </style>

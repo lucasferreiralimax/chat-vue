@@ -50,21 +50,21 @@ export default {
 
 <style lang="stylus">
 .chat-content
-  width calc(100% - 40px)
+  box-sizing border-box
   margin 0 auto
   padding-top 30px
-  box-sizing border-box
+  width calc(100% - 40px)
   .footer,
   .content
-    width 100%
-    border-radius 5px
     background var(--main-bg-color)
-    padding 20px
+    border-radius 5px
     box-sizing border-box
+    padding 20px
+    width 100%
   .footer
-    height 100px
     display flex
     flex-direction row
+    height 100px
     position relative
     .autor
       display flex
@@ -72,30 +72,30 @@ export default {
       position relative
       .input,
       .status
-        position absolute
-        left 60px
         bottom 10px
+        left 60px
+        position absolute
   .actions
+    align-items center
     display flex
     flex-flow row
-    align-items center
     position absolute
     right 20px
     button
+      align-items center
       background transparent
+      border 0
       display flex
       justify-content center
-      align-items center
-      border 0
       margin 0 10px
       svg
         margin-right 5px
       span
         background #eee
         border 1px solid #999
+        border-radius 100px
         color #333
         padding 3px 6px
-        border-radius 100px
     .logout
       display flex
       flex-direction column
@@ -110,19 +110,19 @@ export default {
         fill #f00
   .content
     overflow-y hidden
-    position relative
     padding 0
+    position relative
     ul
-      list-style none
       height calc(100% - 40px)
-      overflow-y auto
+      list-style none
       margin 0
+      overflow-y auto
       padding 100px 20px 20px
     li
-      padding 0
       display flex
       flex-direction column
       justify-content center
+      padding 0
       .autor
         position relative
       &.right + .right .autor
@@ -144,10 +144,10 @@ export default {
         cursor pointer
         margin 0 10px 10px 0 !important
       .time
-        font-size 11px
-        position absolute
         bottom 10px
+        font-size 11px
         left 55px
+        position absolute
     .autor, .message
       display flex
       flex-direction row
@@ -155,18 +155,18 @@ export default {
       border-width 1px
       padding 10px
       pre
-        text-align right !important
         margin 0
+        text-align right !important
 
 .autor.fixed
-  padding 1em
-  border-radius 10px
-  position fixed !important
   background var(--main-bg-color)
-  box-sizing border-box
+  border-radius 10px
   box-shadow 0 0 0 1px rgba(#fff, .2), 0 0 10px rgba(#000, .2)
-  transform translateY(-75px)
+  box-sizing border-box
   cursor pointer
+  padding 1em
+  position fixed !important
+  transform translateY(-75px)
   z-index 11
   figure.user-image
     margin-bottom 0 !important
@@ -174,17 +174,17 @@ export default {
     display flex
     flex-direction column
     .status_persona
-      margin-top .5em
       margin-left 0
+      margin-top .5em
 
 @media screen and (max-width 830px)
   .chat-content
     height 100vh
     &.h-full
-      height calc(100vh - 125px)
       display flex
-      justify-content space-between
       flex-direction column
+      height calc(100vh - 125px)
+      justify-content space-between
       margin-bottom 25px
       .content
         height calc(100% - 120px)
@@ -192,19 +192,19 @@ export default {
           height calc(100% - 120px)
 @media screen and (min-width 830px)
   .chat-content
-    width calc(100% - 10px)
     margin-right 10px
-    padding-top 10px
     padding-bottom 0
+    padding-top 10px
+    width calc(100% - 10px)
     .content
       height calc(100vh - 130px)
       margin-bottom 10px
 
 @media screen and (min-width 1330px)
   .chat-content
-    width calc(100% - 30px)
-    padding-top 30px
     margin-right 30px
+    padding-top 30px
+    width calc(100% - 30px)
     .content
       height calc(100vh - 190px)
       margin-bottom 30px

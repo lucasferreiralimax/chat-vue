@@ -4,7 +4,7 @@
     <p>{{ this.$t("views.config.text") }}</p>
     <dark-mode />
     <div>{{ this.$t("views.config.language") }}<languages /></div>
-  </section>    
+  </section>
 </template>
 
 <script>

@@ -59,40 +59,40 @@ export default {
 
 <style lang="stylus">
 .chat-input
-  width 100%
   cursor text
   display flex
   flex-direction row
   position relative
+  width 100%
   .autor
     display flex
     flex-direction row
     position relative
     .input,
     .status
-      position absolute
-      left 60px
       bottom 10px
+      left 60px
+      position absolute
   .input
     background var(--main-bg-color)
-    color var(--main-color)
-    width 100%
-    box-sizing border-box
     border 0
-    outline none
+    box-sizing border-box
+    color var(--main-color)
     height 60px
+    outline none
+    width 100%
   .btn.send
     background var(--main-color-primary)
-    position absolute
-    bottom -25px
-    right -25px
-    border-radius 100px
-    font-size 0
     border 0
-    width 40px
-    height 40px
+    border-radius 100px
+    bottom -25px
     cursor pointer
+    font-size 0
+    height 40px
+    position absolute
+    right -25px
     transition .3s all
+    width 40px
     &:hover
       transform scale(1.2)
     svg

@@ -8,9 +8,9 @@
 
 <style lang="stylus">
   .notfound
-    display flex
     align-items center
+    display flex
+    flex-direction column
     justify-content center
     min-height 100vh
-    flex-direction column
 </style>

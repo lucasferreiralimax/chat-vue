@@ -6,10 +6,10 @@
 
 <style lang="stylus">
 :root
-  --main-color #000
-  --main-color-primary #2cca6b
   --main-bg-color #fff
   --main-bg-color-rgba 0, 0, 0
+  --main-color #000
+  --main-color-primary #2cca6b
 
 ::-webkit-scrollbar-track
   background var(--main-bg-color)
@@ -27,14 +27,14 @@ body
   background var(--main-bg-color)
 
 #app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
   color var(--main-color)
+  font-family Avenir, Helvetica, Arial, sans-serif
 
 .page
-  padding 2em
   box-sizing border-box
+  padding 2em
   &.chat-content
     padding 0 2em
     width 100%
@@ -45,6 +45,6 @@ body
       padding 1em 0
       width calc(100% - 30px)
   a
-    text-decoration none
     color var(--main-color-primary)
+    text-decoration none
 </style>

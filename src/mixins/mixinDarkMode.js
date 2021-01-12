@@ -13,18 +13,14 @@ export const mixinDarkMode = {
       this.darkMode(this.dark)
     },
     darkMode (type) {
+      type ? this.setColors(['#fff', '#333']) : this.setColors(['#000', '#fff'])
+      this.$store.commit("updateDarkMode", type)
+      localStorage.setItem("dark", type)
+    },
+    setColors (colors) {
       let root = document.documentElement
-      if(type) {
-        root.style.setProperty("--main-color", "#fff")
-        root.style.setProperty("--main-bg-color", "#333")
-        this.$store.commit("updateDarkMode", true)
-        localStorage.setItem("dark", true)
-      } else {
-        root.style.setProperty("--main-color", "#000")
-        root.style.setProperty("--main-bg-color", "#fff")
-        this.$store.commit("updateDarkMode", false)
-        localStorage.setItem("dark", false)
-      }
+      root.style.setProperty("--main-color", colors[0])
+      root.style.setProperty("--main-bg-color", colors[1])
     }
   }
 }

@@ -22,29 +22,23 @@ export default {
   },
   data () {
     return {
-      menu: '',      
-      isHome: true      
+      menu: '',
+      isHome: true
     }
   },
-  created () {
-    this.checkPage(this.$route)
-  },
+  created () { this.checkPage(this.$route) },
   watch: {
     $route() { this.checkPage() }
   },
   methods: {
-    onMenu (value) {
-      this.menu = value
-    }, 
-    checkPage() {
-      this.isHome = this.$route.name == 'welcome'
-    }
-  }  
+    onMenu (value) { this.menu = value },
+    checkPage() { this.isHome = this.$route.name == 'welcome' }
+  }
 }
 </script>
 
 <style lang="stylus">
-.chat-page  
+.chat-page
   padding 0
   height 100vh
   display flex
@@ -59,7 +53,7 @@ export default {
 @css {
   .chat-page {
     background: rgba(var(--main-bg-color-rgba), .1);
-  }  
+  }
 }
 
 .user-image

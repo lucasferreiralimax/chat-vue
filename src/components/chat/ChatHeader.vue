@@ -7,12 +7,12 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.976 51.976" width="30px" v-else>
         <path d="M44.373 7.603c-10.137-10.137-26.632-10.138-36.77 0-10.138 10.138-10.137 26.632 0 36.77s26.632 10.138 36.77 0c10.137-10.138 10.137-26.633 0-36.77zm-8.132 28.638a2 2 0 01-2.828 0l-7.425-7.425-7.778 7.778a2 2 0 11-2.828-2.828l7.778-7.778-7.425-7.425a2 2 0 112.828-2.828l7.425 7.425 7.071-7.071a2 2 0 112.828 2.828l-7.071 7.071 7.425 7.425a2 2 0 010 2.828z"/>
       </svg>
-    </button>    
+    </button>
     <nav class="nav">
       <router-link to="/" tag="button" class="item logo" @click.native="menuBars = false">
         <img alt="Vue logo" src="../../assets/chat-icon.svg" width="20px">
         <span>{{ this.$t("nav.home") }}</span>
-      </router-link>      
+      </router-link>
       <languages />
       <div class="bottom" @click="menuBars = false">
         <router-link to="/profile" tag="button" class="item">
@@ -35,8 +35,8 @@
           <span>{{ this.$t("nav.logout") }}</span>
         </button>
       </div>
-    </nav> 
-    <div class="nav-overlay" :class="{ 'active': menuBars }" @click="menuBars = false"></div>   
+    </nav>
+    <div class="nav-overlay" :class="{ 'active': menuBars }" @click="menuBars = false"></div>
   </header>
 </template>
 
@@ -46,9 +46,8 @@ import Languages from '@/components/Languages'
 export default {
   name: 'chat-header',
   components: { Languages },
-  created () {
-    window.addEventListener('resize', this.onMenuResize)
-  },
+  created () { window.addEventListener('resize', this.onMenuResize) },
+  destroyed () { window.removeEventListener('resize', this.onMenuResize) },
   mounted () {
     if(window.innerWidth > 1300) {
       this.menu = 'menu'
@@ -60,20 +59,11 @@ export default {
       this.onMenuEventListener()
     }
   },
-  destroyed () {
-    window.removeEventListener('resize', this.onMenuResize)
-  },
   watch: {
-    isMobile (value) {
-      if(value) {
-        this.menuBars = false
-      }      
-    }    
+    isMobile (value) { if(value) this.menuBars = false }
   },
   methods: {
-    onMenuActive () {
-      this.$emit('menuHandled', this.menu)
-    },
+    onMenuActive () { this.$emit('menuHandled', this.menu) },
     onMenuOver () {
       this.menu = 'menu'
       this.onMenuActive()
@@ -87,7 +77,7 @@ export default {
       if(header) {
         header.addEventListener('mouseover', this.onMenuOver)
         header.addEventListener('mouseleave', this.onMenuLeave)
-      }      
+      }
     },
     onMenuRemoveEventListener () {
       let header = document.querySelector('.chat-header')
@@ -116,9 +106,7 @@ export default {
   data () {
     return {
       menu: '',
-      menuBars: false,
-      title: 'Chat Header',
-      langs: ['pt', 'en']
+      menuBars: false
     }
   }
 }
@@ -216,7 +204,7 @@ export default {
       flex-direction column
       svg
         width 25px
-      .item:first-of-type        
+      .item:first-of-type
         background transparent
         color var(--main-color)
         text-shadow none

@@ -19,18 +19,18 @@ export default {
   created () { this.chatPage() },
   watch: {
     $route() { this.chatPage() }
-  },  
+  },
   methods: {
     chatPage () {
       let chat_current = this.chats_list.find(el => el.url == this.$route.params.id)
       if(chat_current) {
-        this.chats = chat_current.chats
         let { name, photo, status, url, status_persona } = chat_current
+        this.chats = chat_current.chats
         this.chat_profile = { name, photo, status, url, status_persona }
       } else {
         this.$router.push({ name: 'notfound' })
       }
     }
-  }  
+  }
 }
 </script>

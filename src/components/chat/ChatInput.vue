@@ -17,11 +17,6 @@ import { mapState } from 'vuex'
 export default {
   name: 'chat-input',
   computed: mapState(['user']),
-  data () {
-    return {
-      title: 'ChatInput'
-    }
-  },
   methods: {
     sendMsg () {
       let inputChat = document.querySelector('.chat-input .input')
@@ -52,12 +47,12 @@ export default {
   mounted () {
     let contentChat = document.querySelector('.chat-input')
     let inputChat = document.querySelector('.chat-input .input')
-    
+
     if(inputChat) {
       contentChat.addEventListener("click", () => {
         inputChat.focus()
       })
-    }    
+    }
   }
 }
 </script>

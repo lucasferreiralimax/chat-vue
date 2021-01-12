@@ -10,7 +10,7 @@
             <div class="block">
               <span class="nome">{{ chatProfile.name }}</span>
               <span class="status_persona">{{ chatProfile.status_persona }}</span>
-            </div>            
+            </div>
           </div>
         </li>
         <li v-for="(chat, index) in chats" :key='index' :class="{'left': chat.open, 'right': !chat.open }">
@@ -41,28 +41,19 @@ import ChatInput from '@/components/chat/ChatInput'
 export default {
   name: 'chat-content',
   props: ['chats', 'chatProfile'],
-  components: {
-    ChatInput
-  },
-  data () {
-    return {
-      title: 'Chat'
-    }
-  },
+  components: { ChatInput },
   methods: {
-    profile (url) {
-      this.$router.push(`/profile/${url}`)
-    }
+    profile (url) { this.$router.push(`/profile/${url}`) }
   }
 }
 </script>
 
 <style lang="stylus">
 .chat-content
-  width calc(100% - 40px)  
+  width calc(100% - 40px)
   margin 0 auto
   padding-top 30px
-  box-sizing border-box  
+  box-sizing border-box
   .footer,
   .content
     width 100%
@@ -126,7 +117,7 @@ export default {
       height calc(100% - 40px)
       overflow-y auto
       margin 0
-      padding 100px 20px 20px      
+      padding 100px 20px 20px
     li
       padding 0
       display flex
@@ -189,7 +180,7 @@ export default {
 @media screen and (max-width 830px)
   .chat-content
     height 100vh
-    &.h-full  
+    &.h-full
       height calc(100vh - 125px)
       display flex
       justify-content space-between
@@ -201,7 +192,7 @@ export default {
           height calc(100% - 120px)
 @media screen and (min-width 830px)
   .chat-content
-    width calc(100% - 10px)    
+    width calc(100% - 10px)
     margin-right 10px
     padding-top 10px
     padding-bottom 0

@@ -31,8 +31,4 @@ export default new Vuex.Store({
       state.dark = value
     },
   },
-  actions: {
-  },
-  modules: {
-  }
 })

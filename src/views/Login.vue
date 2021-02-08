@@ -62,30 +62,43 @@ export default {
   .dark-mode
     background var(--main-bg-color)
     border-radius 6px
-    left -8px
+    right -8px
     padding 0 10px
     position absolute
-    top 4px
+    bottom 4px
     transform scale(.75)
+
 .login-form
   background var(--main-bg-color)
   border-radius 10px
   box-shadow 0 0 0 2px rgba(#fff, .7), 0 0 30px 10px rgba(#000, .2)
+  box-sizing border-box
   margin 0 auto
-  max-width 400px
-  padding 2.6em
-  width 100%
+  max-width 450px
+  padding 1em
+  position relative
+  transition .5s box-shadow
+  user-select none
+  width calc(100% - 10px)
+  @media screen and (min-width 450px)
+    padding 2em
+  &:hover
+    box-shadow 0 0 0 2px rgba(#fff, .7), 0 0 30px 10px rgba(#000, .2), 0 0 2px 10px rgba(0,0,0,.5)
   svg
     fill var(--main-color)
     margin-right .5em
+    min-width 50px
     transform rotate(-90deg)
   h1
     align-items center
     display flex
-    font-size 2.6em
+    font-size 1.5em
     justify-content center
     margin 0 0 1em
     text-align center
+    word-break break-all
+    @media screen and (min-width 450px)
+      font-size 2em
   input
     border 4px solid rgba(#aaa, .5)
     border-radius 10px

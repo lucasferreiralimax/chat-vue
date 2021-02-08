@@ -16,19 +16,19 @@
       "title": "Conversazioni"
     },
     "welcome": {
-      "title": "benvenuto",
+      "title": "Benvenuto",
       "text": "Una semplice interfaccia di chat creata con Vue.js"
     },
     "profile": {
       "title": "Profilo | Modificare profilo",
-      "status": "stato",
+      "status": "Stato",
       "created": "Account creato in data"
     },
     "config": {
       "title": "Configurazione",
       "text": "Pagina Configurazione",
       "darkMode": "Modalità scura",
-      "language": "linguaggio"
+      "language": "Linguaggio"
     },
     "login": {
       "title": "Login",

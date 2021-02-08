@@ -3,7 +3,7 @@
     "home": "聊天",
     "edit": "编辑个人资料",
     "config": "组态",
-    "logout": "Sair"
+    "logout": "出去"
   },
   "chatComponent": {
     "sendMsg": "发信息"

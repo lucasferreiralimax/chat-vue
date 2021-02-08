@@ -1,45 +1,45 @@
 {
-    "nav": {
-      "home": "Bavarder",
-      "edit": "Editer le profil",
-      "config": "Configuration",
-      "logout": "Se déconnecter"
+  "nav": {
+    "home": "Bavarder",
+    "edit": "Editer le profil",
+    "config": "Configuration",
+    "logout": "Se déconnecter"
+  },
+  "chatComponent": {
+    "sendMsg": "Envoyer le message"
+  },
+  "views": {
+    "about": {
+      "text": "Interface de chat simple et réactive créée avec"
     },
-    "chatComponent": {
-      "sendMsg": "Envoyer le message"
+    "home": {
+      "title": "Conversations"
     },
-    "views": {
-      "about": {
-        "text": "Interface de chat simple et réactive créée avec"
-      },
-      "home": {
-        "title": "Conversations"
-      },
-      "welcome": {
-        "title": "Sois le bienvenu",
-        "text": "Une interface de bavarder simple créée avec Vue.js"
-      },
-      "profile": {
-        "title": "Profil | Editer le profil",
-        "status": "Etat",
-        "created": "Compte créé le"
-      },
-      "config": {
-        "title": "Configuration",
-        "text": "Page Configuration",
-        "darkMode": "Mode Noir",
-        "language": "Langue"
-      },
-      "login": {
-        "title": "S'identifier",
-        "user": "Utilisateur",
-        "pass": "Passe",
-        "enter": "Entrer"
-      },
-      "notfound": {
-        "title": "Page 404",
-        "text": "Désolé pour le désagrément cette page n'existe pas",
-        "backHome": "Cliquez ici pour aller à l'accueil"
-      }
+    "welcome": {
+      "title": "Sois le bienvenu",
+      "text": "Une interface de bavarder simple créée avec Vue.js"
+    },
+    "profile": {
+      "title": "Profil | Editer le profil",
+      "status": "Etat",
+      "created": "Compte créé le"
+    },
+    "config": {
+      "title": "Configuration",
+      "text": "Page Configuration",
+      "darkMode": "Mode Noir",
+      "language": "Langue"
+    },
+    "login": {
+      "title": "S'identifier",
+      "user": "Utilisateur",
+      "pass": "Passe",
+      "enter": "Entrer"
+    },
+    "notfound": {
+      "title": "Page 404",
+      "text": "Désolé pour le désagrément cette page n'existe pas",
+      "backHome": "Cliquez ici pour aller à l'accueil"
     }
   }
+}

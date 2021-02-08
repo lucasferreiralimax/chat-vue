@@ -9,7 +9,7 @@ export default {
   name: 'languages',
   data () {
     return {
-      langs: ['pt-BR', 'en-US', 'ru-RU', 'es-ES', 'fr-FR']
+      langs: ['pt-BR', 'en-US', 'ru-RU', 'es-ES', 'fr-FR', 'ja-JP', 'it-IT', 'zh-CN']
     }
   },
   created () {

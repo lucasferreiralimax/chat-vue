@@ -42,6 +42,7 @@
 
 <script>
 import Languages from '@/components/Languages'
+import TokenJS from '@/token'
 
 export default {
   name: 'chat-header',
@@ -99,7 +100,7 @@ export default {
     },
     logout () {
       this.$store.commit("updateAuth", false)
-      localStorage.removeItem("auth")
+      TokenJS.cleanHash()
       this.$router.push('/login')
     }
   },

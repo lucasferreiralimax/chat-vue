@@ -23,6 +23,7 @@
 <script>
 import Languages from '@/components/Languages'
 import DarkMode from '@/components/DarkMode'
+import TokenJS from '@/token'
 
 export default {
   name: 'name',
@@ -37,7 +38,7 @@ export default {
   methods: {
     login () {
       this.$store.commit("updateAuth", true)
-      localStorage.setItem("auth", true)
+      TokenJS.setHash()
       this.$router.push('/')
     }
   }

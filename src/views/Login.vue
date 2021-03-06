@@ -70,6 +70,8 @@ export default {
     right 0
     left 0
     opacity .3
+    @media screen and (min-width 1300px)
+      height 200%
   .languages
     position absolute
     right 0
@@ -106,6 +108,7 @@ export default {
     padding 2em
   &:hover
     box-shadow 0 0 10px 5px rgba(#000, .2), 0 0 30px 10px rgba(#000, .2), 0 0 2px 10px rgba(0,0,0,.1)
+    transform scale(1.1)
   svg
     fill var(--main-color)
     margin-right .5em

@@ -70,6 +70,8 @@ export default {
     right 0
     left 0
     opacity .3
+    @media screen and (max-width 500px)
+      width 200%
     @media screen and (min-width 1300px)
       height 200%
   .languages

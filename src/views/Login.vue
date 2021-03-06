@@ -48,14 +48,28 @@ export default {
 <style lang="stylus">
 .login
   align-items center
-  background #222 url('../assets/amazonas.jpg') no-repeat
-  background-size cover
+  background #000
   box-sizing border-box
   color var(--main-color)
   display flex
   justify-content center
   min-height 100vh
   padding 20px
+  position relative
+  &:before
+    animation 300s backgroundAnimation infinite linear
+    background #222 url('../assets/amazonas.jpg') no-repeat
+    background-size cover
+    content ''
+    display flex
+    height 100%
+    width 100%
+    position fixed
+    top 0
+    bottom 0
+    right 0
+    left 0
+    opacity .3
   .languages
     position absolute
     right 0
@@ -69,10 +83,17 @@ export default {
     bottom 4px
     transform scale(.75)
 
+@css {
+  .login-form {
+    background: rgba(var(--main-bg-color-rgba-dark), var(--main-alpha));
+  }
+}
+
 .login-form
-  background var(--main-bg-color)
+  backdrop-filter blur(10px)
   border-radius 10px
-  box-shadow 0 0 0 2px rgba(#fff, .7), 0 0 30px 10px rgba(#000, .2)
+  border 1px solid rgba(255, 255, 255, 0.3)
+  box-shadow 0 0 10px 5px rgba(#000, .5), 0 0 30px 10px rgba(#000, .2)
   box-sizing border-box
   margin 0 auto
   max-width 450px
@@ -84,7 +105,7 @@ export default {
   @media screen and (min-width 450px)
     padding 2em
   &:hover
-    box-shadow 0 0 0 2px rgba(#fff, .7), 0 0 30px 10px rgba(#000, .2), 0 0 2px 10px rgba(0,0,0,.5)
+    box-shadow 0 0 10px 5px rgba(#000, .2), 0 0 30px 10px rgba(#000, .2), 0 0 2px 10px rgba(0,0,0,.1)
   svg
     fill var(--main-color)
     margin-right .5em
@@ -127,4 +148,10 @@ export default {
     &:disabled
       filter grayscale(1)
       pointer-events none
+
+@keyframes backgroundAnimation
+  0%
+    transform rotate(0deg) scale(2)
+  100%
+    transform rotate(360deg) scale(2)
 </style>

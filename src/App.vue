@@ -8,6 +8,8 @@
 :root
   --main-bg-color #fff
   --main-bg-color-rgba 0, 0, 0
+  --main-bg-color-rgba-dark 255, 255, 255
+  --main-alpha .25
   --main-color #000
   --main-color-primary #2cca6b
 

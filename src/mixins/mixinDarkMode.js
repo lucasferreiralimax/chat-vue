@@ -13,7 +13,7 @@ export const mixinDarkMode = {
       this.darkMode(this.dark)
     },
     darkMode (type) {
-      type ? this.setColors(['#fff', '#333', '0,0,0', '.25']) : this.setColors(['#000', '#fff', '255,255,255', '.3'])
+      type ? this.setColors(['#fff', '#333', '0,0,0', '.25']) : this.setColors(['#000', '#fff', '255,255,255', '.1'])
       this.$store.commit("updateDarkMode", type)
       localStorage.setItem("dark", type)
     },

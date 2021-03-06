@@ -50,7 +50,7 @@ export default {
   align-items center
   background #000
   box-sizing border-box
-  color var(--main-color)
+  color #fff
   display flex
   justify-content center
   min-height 100vh
@@ -76,27 +76,42 @@ export default {
       height 200%
   .languages
     position absolute
-    right 0
+    left 50%
     top 0
+    transform translateX(-50%)
   .dark-mode
     background var(--main-bg-color)
-    border-radius 6px
-    right -8px
-    padding 0 10px
+    border 1px solid rgba(255, 255, 255, 0.3)
+    border-bottom 0
+    border-radius 10px 10px 0 0
+    bottom 0
+    box-shadow 0 0 10px 5px rgba(#000, .5), 0 0 30px 10px rgba(#000, .2)
+    box-sizing border-box
+    font-size 12px
+    height 40px
+    left 50%
+    padding 0 0 0 10px
     position absolute
-    bottom 4px
-    transform scale(.75)
+    transform translateX(-50%)
+    color var(--main-color)
+    button
+      transform scale(.7)
 
 @css {
   .login-form {
+    background: rgba(var(--main-bg-color-rgba-dark), var(--main-alpha));
+  }
+  .login-form input {
+    --main-alpha: 1;
+    color: var(--main-color);
     background: rgba(var(--main-bg-color-rgba-dark), var(--main-alpha));
   }
 }
 
 .login-form
   backdrop-filter blur(10px)
-  border-radius 10px
   border 1px solid rgba(255, 255, 255, 0.3)
+  border-radius 10px
   box-shadow 0 0 10px 5px rgba(#000, .5), 0 0 30px 10px rgba(#000, .2)
   box-sizing border-box
   margin 0 auto
@@ -110,12 +125,13 @@ export default {
     padding 2em
   &:hover
     box-shadow 0 0 10px 5px rgba(#000, .2), 0 0 30px 10px rgba(#000, .2), 0 0 2px 10px rgba(0,0,0,.1)
-    transform scale(1.1)
+    transform scale(1.05)
   svg
-    fill var(--main-color)
+    fill #fff
     margin-right .5em
     min-width 50px
     transform rotate(-90deg)
+    transition .4s all
   h1
     align-items center
     display flex
@@ -127,18 +143,18 @@ export default {
     @media screen and (min-width 450px)
       font-size 2em
   input
-    border 4px solid rgba(#aaa, .5)
+    border 2px solid rgba(#aaa, .5)
     border-radius 10px
     box-sizing border-box
     margin 10px 0
     padding 10px
     width 100%
+    outline none
     &:active,
     &:hover
-      border 4px solid var(--main-color-primary)
+      border 2px solid var(--main-color-primary)
   button
     background var(--main-color-primary)
-    border 0
     border 4px solid rgba(#000, .2)
     border-radius 10px
     box-shadow inset 0 0 0 2px rgba(#fff, .3)
@@ -149,7 +165,7 @@ export default {
     user-select none
     width 100%
     &:hover
-      background rgba(#2cca6b, .5)
+      filter saturate()
     &:disabled
       filter grayscale(1)
       pointer-events none

@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="dark-mode">
+  <div class="dark-mode" @click="togleMode()">
     <p>{{ $t("views.config.darkMode") }}</p>
-    <button @click="togleMode()" :class="{ 'active': dark }">{{ $t("views.config.darkMode") }}</button>
+    <button :class="{ 'active': dark }">{{ $t("views.config.darkMode") }}</button>
   </div>
 </template>
 
@@ -15,6 +15,8 @@ export default {
 .dark-mode
   align-items center
   display flex
+  cursor pointer
+  user-select none
   p
     margin-right 1em
 
@@ -28,6 +30,7 @@ export default {
   text-indent -9999px
   user-select none
   width 50px
+  outline none
   &:active:after
     width 33px
   &:after

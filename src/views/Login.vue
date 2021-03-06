@@ -101,7 +101,7 @@ export default {
   max-width 450px
   padding 1em
   position relative
-  transition .5s box-shadow
+  transition .5s all
   user-select none
   width calc(100% - 10px)
   @media screen and (min-width 450px)

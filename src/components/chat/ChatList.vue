@@ -91,7 +91,7 @@ export default {
     width 18px
 
 .status_persona
-  color #aaa
+  color var(--main-color)
   font-size 11px
   margin-left 10px
   overflow hidden

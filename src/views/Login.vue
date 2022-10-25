@@ -31,8 +31,8 @@ export default {
   data() {
     DarkMode
     return {
-      pass: '',
-      user: ''
+      pass: 'lucas',
+      user: 'lucas'
     }
   },
   methods: {

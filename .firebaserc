@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "chat-vue-interface"
+    "default": "web-chat-vue"
   }
 }

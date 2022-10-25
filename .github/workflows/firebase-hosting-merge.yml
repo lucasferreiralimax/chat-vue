@@ -17,8 +17,6 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CHAT_VUE_INTERFACE }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_WEB_CHAT_VUE }}'
           channelId: live
-          projectId: chat-vue-interface
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+          projectId: web-chat-vue
